@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+:root {
+  --primary: #60a5fa;
+  --secondary: #a855f7;
+  --bg-dark: #020617;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Plus Jakarta Sans',
+    system-ui,
+    sans-serif;
+  background-color: var(--bg-dark);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Fondo Animado de Auroras */
+.aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% -20%, #1e293b, var(--bg-dark));
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(
+    135deg,
+    rgb(59 130 246 / 0.15),
+    rgb(168 85 247 / 0.15)
+  );
+  filter: blur(80px);
+  border-radius: 50%;
+  animation: move 20s infinite alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translate(-10%, -10%);
+  }
+  to {
+    transform: translate(20%, 20%);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgb(15 23 42 / 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgb(96 165 250 / 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -20px rgb(0 0 0 / 0.5);
+}
+
+/* Menú Mobile Overlay */
+.mobile-overlay {
+  transition:
+    opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1),
+    clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1),
+    visibility 0.5s;
+  clip-path: circle(0% at 100% 0%);
+  visibility: hidden;
+}
+
+.mobile-overlay.is-open {
+  clip-path: circle(150% at 100% 0%);
+  visibility: visible;
+}
+
+.nav-link-mobile {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.mobile-overlay.is-open .nav-link-mobile {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.burger-line {
+  transition: all 0.3s ease;
+}
+
+.burger-active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-active .line2 {
+  opacity: 0;
+}
+
+.burger-active .line3 {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.btn-fancy {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-fancy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-fancy:hover::after {
+  left: 100%;
+}
+
+.aspect-short {
+  aspect-ratio: 9 / 16;
+}
