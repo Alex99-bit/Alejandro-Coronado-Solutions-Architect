@@ -1,7 +1,7 @@
 export const SOCIAL_LINKS = {
   youtube: 'https://www.youtube.com/@alexcoronado3219',
   linkedin: 'https://www.linkedin.com/in/alejandro-obregon',
-  twitter: '#',
+  instagram: 'https://www.instagram.com/99alexco/',
   github: 'https://github.com/Alex99-bit',
 }
 
