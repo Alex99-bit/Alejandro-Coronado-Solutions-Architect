@@ -7,7 +7,7 @@ export const SOCIAL_LINKS = {
 
 /** Reemplaza con IDs reales cuando tengas los embeds definitivos */
 export const YOUTUBE_EMBEDS = {
-  featured: ['https://www.youtube.com/watch?v=RJAHCuhLtEs&t=14s', 'https://www.youtube.com/watch?v=lRmVLaLLc8M&t=1s'],
+  featured: ['RJAHCuhLtEs?si=F1rgkjpjwW97AAlW', 'https://www.youtube.com/watch?v=lRmVLaLLc8M&t=1s'],
   shorts: [
     'https://www.youtube.com/shorts/fqoGxiQr-9A',
     'https://www.youtube.com/shorts/-3k_-2BIqgM',
