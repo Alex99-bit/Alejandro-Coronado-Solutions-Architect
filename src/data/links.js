@@ -7,10 +7,10 @@ export const SOCIAL_LINKS = {
 
 /** Reemplaza con IDs reales cuando tengas los embeds definitivos */
 export const YOUTUBE_EMBEDS = {
-  featured: ['RJAHCuhLtEs?si=F1rgkjpjwW97AAlW', 'https://www.youtube.com/watch?v=lRmVLaLLc8M&t=1s'],
+  featured: ['RJAHCuhLtEs?si=F1rgkjpjwW97AAlW', 'lRmVLaLLc8M?si=qppTgPpSKD3zANLa&amp'],
   shorts: [
-    'https://www.youtube.com/shorts/fqoGxiQr-9A',
-    'https://www.youtube.com/shorts/-3k_-2BIqgM',
-    'https://www.youtube.com/shorts/BKxv67TsWaY',
+    'fqoGxiQr-9A?si=r5t80Pus7fTtCosK',
+    '-3k_-2BIqgM?si=swuArfTLjd-ffp74',
+    'BKxv67TsWaY?si=rajLtYSrW7fuTljg',
   ],
 }
