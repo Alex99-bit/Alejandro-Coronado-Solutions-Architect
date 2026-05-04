@@ -22,8 +22,7 @@ export function Hero() {
               <span className="gradient-text">Fundador</span>
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              No solo escribo código, diseño soluciones de negocio. Mi enfoque combina la
-              precisión técnica con la visión estratégica de un fundador.
+              Soy software dev, solutions architect y technical sales. Mi mentalidad de fundador usa el código como herramienta y la arquitectura como medio para construir soluciones de impacto.
             </p>
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
               <a

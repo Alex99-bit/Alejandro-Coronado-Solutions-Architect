@@ -16,79 +16,74 @@ export function ProfessionalProfile() {
             Perfil profesional
           </p>
           <h2 id="perfil-heading" className="mb-6 text-4xl font-bold md:text-5xl">
-            Ingeniero, fundador y <span className="gradient-text">arquitecto de soluciones</span>
+            Ingeniero, fundador, arquitecto de soluciones y <span className="gradient-text">technical sales</span>
           </h2>
           <p className={sectionLead}>
-            Este portafolio concentra la trayectoria de Alex Coronado como ingeniero y
-            desarrollador con una base académica sólida, evolución hacia rol fundacional y foco en
-            visión de negocio, marca personal y comunidad.
+            Este portafolio presenta a Alex Coronado como software dev, solutions architect y technical sales con mentalidad de fundador: el código es la herramienta y la arquitectura el medio para construir soluciones de impacto.
           </p>
         </header>
 
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="space-y-10 lg:col-span-7">
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-up">
-              <h3 className={subsectionTitle}>Formación y especialización técnica</h3>
+              <h3 className={subsectionTitle}>Desarrollo Full-Stack y Arquitectura</h3>
               <p className={`${sectionLead} text-base md:text-lg`}>
-                Combina estudios centrados en <strong className="text-slate-200">Ingeniería en Tecnologías de la Información</strong> con{' '}
-                <strong className="text-slate-200">Diseño y Desarrollo de Videojuegos</strong>.
-                Ejecuta con dominio de stacks modernos (React, Node.js, Laravel), pero también
-                asume{' '}
-                <strong className="text-slate-200">
-                  dirección técnica, arquitectura de soluciones y fundación de productos
-                </strong>
-                .
+                Me especializo en desarrollo full-stack moderno con un flujo de trabajo optimizado para eficiencia y escalabilidad. Mi arquitectura predilecta combina la robustez de Laravel y PHP en el backend con la agilidad de React e Inertia.js en el frontend, apoyado por interfaces limpias construidas con Tailwind CSS.
               </p>
             </article>
 
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-up" data-aos-delay="50">
-              <h3 className={subsectionTitle}>Logros destacados</h3>
-              <ul className="list-inside list-disc space-y-3 text-lg text-slate-400 marker:text-blue-400">
-                <li>
-                  <strong className="text-slate-200">NASA Space Apps Challenge</strong>: primero lugar.
-                </li>
-                <li>
-                  Trayectoria en <strong className="text-slate-200">negociaciones comerciales de alto nivel</strong>.
-                </li>
+              <h3 className={subsectionTitle}>Desarrollo 3D y Game Design</h3>
+              <p className={`${sectionLead} text-base md:text-lg`}>
+                Mi proceso creativo se extiende a la creación de mundos virtuales y experiencias en XR. Domino motores líderes como Unity y Unreal Engine, complementando el desarrollo técnico con un flujo de trabajo sólido en modelado 3D mediante Blender, Maya y Meshroom.
+              </p>
+              <ul className="list-inside list-disc space-y-3 text-lg text-slate-400 marker:text-blue-400 mt-6">
+                <li>Retopología y optimización de mallas.</li>
+                <li>Animación de personajes y texturizado PBR.</li>
+                <li>Fotogrametría para entornos realistas.</li>
               </ul>
             </article>
 
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-up" data-aos-delay="100">
-              <h3 className={subsectionTitle}>Visión comercial</h3>
-              <p className={`${sectionLead} text-base md:text-lg`}>
-                Apoya la venta de software y consultoría con métodos{' '}
-                <strong className="text-slate-200">estructurados</strong>: utiliza frameworks como{' '}
-                <strong className="text-slate-200">SPIN</strong> para alinear necesidades del cliente,
-                alcance técnico y monetización sustentable.
-              </p>
+              <h3 className={subsectionTitle}>Logros destacados</h3>
+              <ul className="list-inside list-disc space-y-3 text-lg text-slate-400 marker:text-blue-400">
+                <li>
+                  Cierra tratos de más de <strong className="text-slate-200">$100,000 MXN</strong> (~<strong className="text-slate-200">$5,500 USD</strong>) en proyectos tecnológicos y soluciones a medida.
+                </li>
+                <li>
+                  <strong className="text-slate-200">NASA Space Apps Challenge</strong>: primer lugar.
+                </li>
+                <li>
+                  Experiencia en <strong className="text-slate-200">technical sales</strong> y negociaciones comerciales basadas en <strong className="text-slate-200">SPIN Selling</strong>.
+                </li>
+              </ul>
             </article>
           </div>
 
           <aside className="space-y-10 lg:col-span-5">
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-left">
-              <h3 className={subsectionTitle}>Marca personal y contenido</h3>
+              <h3 className={subsectionTitle}>Ecosistema de Hardware y Creación de Contenido</h3>
               <p className={`${sectionLead} text-base md:text-lg`}>
-                Construye marca y comunidad al{' '}
-                <strong className="text-slate-200">convertir expertise técnica en activo público</strong>,
-                enfocado en guiar profesionales desde el rol individual hacia líderes tech y founders.
+                Opero bajo un ecosistema de alta potencia que respalda tanto el desarrollo como la marca personal De Programador a Fundador.
               </p>
+              <ul className="space-y-4 text-lg text-slate-400 mt-6">
+                <li className="border-l-2 border-blue-500/40 py-1 pl-4">
+                  Workstation con Ryzen 7 5800X y RTX 3070 para renderizado y compilación sin fricciones.
+                </li>
+                <li className="border-l-2 border-purple-500/40 py-1 pl-4">
+                  Productividad móvil con Galaxy S24 y Tab S10 Plus para gestionar proyectos en movimiento.
+                </li>
+                <li className="border-l-2 border-blue-400/40 py-1 pl-4">
+                  Producción visual con Osmo Mobile 7p y módulo de autoenfoque para contenido de alta calidad en YouTube y TikTok.
+                </li>
+              </ul>
             </article>
 
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-left" data-aos-delay="80">
-              <h3 className={subsectionTitle}>Intereses tecnológicos y estilo</h3>
-              <ul className="space-y-4 text-lg text-slate-400">
-                <li className="border-l-2 border-blue-500/40 py-1 pl-4">
-                  Alta exigencia en <strong className="text-slate-200">rendimiento mobile y desktop</strong> (hardware y software).
-                </li>
-                <li className="border-l-2 border-purple-500/40 py-1 pl-4">
-                  <strong className="text-slate-200">Experimentación cotidiana</strong> tipo retos físicos/coordinación como la mano no
-                  dominante: reflejo de práctica repetida orientada al crecimiento.
-                </li>
-                <li className="border-l-2 border-blue-400/40 py-1 pl-4">
-                  <strong className="text-slate-200">Interactive entertainment</strong> con Unity como motor y disfrute de acción/aventura como
-                  cultura cercana al producto.
-                </li>
-              </ul>
+              <h3 className={subsectionTitle}>Estilo profesional y estrategia</h3>
+              <p className={`${sectionLead} text-base md:text-lg`}>
+                Mi estilo profesional combina técnica y estrategia. Aplico SPIN Selling para liderar proyectos de software y realidad extendida, enfocándome en la rentabilidad y la innovación desde el rol de fundador.
+              </p>
             </article>
 
             <p
@@ -96,15 +91,7 @@ export function ProfessionalProfile() {
               data-aos="fade-left"
               data-aos-delay="140"
             >
-              En síntesis, es un profesional que combina{' '}
-              <strong className="font-semibold text-white">
-                la precisión de un ingeniero de software con la visión estratégica de un director de proyectos
-              </strong>
-              , moviéndose entre arquitectura de sistemas complejos y la gestión de relaciones con clientes, con{' '}
-              <strong className="font-semibold text-white">
-                aprendizaje constante y desarrollo de nuevas capacidades
-              </strong>
-              .
+              En síntesis, soy un profesional que lleva la precisión de un ingeniero de software al siguiente nivel mediante una visión estratégica de fundador, moviéndose entre arquitectura de sistemas complejos y la gestión de relaciones comerciales.
             </p>
           </aside>
         </div>
