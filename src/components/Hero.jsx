@@ -1,3 +1,5 @@
+import heroImg from "../assets/Alex Coronado.jpeg";
+
 export function Hero() {
   return (
     <header className="relative flex min-h-screen items-center pt-20">
@@ -44,7 +46,7 @@ export function Hero() {
               <div className="absolute -inset-4 animate-pulse rounded-[3rem] bg-gradient-to-r from-blue-600 to-purple-600 opacity-20 blur-2xl" />
               <div className="relative overflow-hidden rounded-[3rem] border border-white/10 glass-card">
                 <img
-                  src="https://drive.google.com/file/d/1qk3nuwHiWOSEkq1PZA-LoGFI04e_ka8y/view?usp=sharing"
+                  src={heroImg}
                   alt="Alex Coronado"
                   className="aspect-[4/5] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
                 />
