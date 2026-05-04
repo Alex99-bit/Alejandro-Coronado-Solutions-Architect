@@ -4,12 +4,12 @@ const featuredVideos = [
   {
     id: YOUTUBE_EMBEDS.featured[0],
     title: 'Mentalidad de Fundador para Devs',
-    meta: 'Masterclass • 25 min',
+    meta: 'Masterclass • 6 min',
   },
   {
     id: YOUTUBE_EMBEDS.featured[1],
-    title: 'Escalando una Startup Tecnológica',
-    meta: 'Tutorial • 18 min',
+    title: 'El error de los mil dólares',
+    meta: 'Masterclass • 12 min',
   },
 ]
 
