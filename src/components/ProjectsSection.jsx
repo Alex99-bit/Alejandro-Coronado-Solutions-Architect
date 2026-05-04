@@ -12,39 +12,69 @@ export function ProjectsSection() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-12">
-          <article className="group rounded-[2.5rem] glass-card lg:col-span-8" data-aos="fade-up">
-            <div className="relative h-96 overflow-hidden rounded-t-[2.5rem] lg:rounded-t-[2.5rem]">
-              <img
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200"
-                alt="FreshCar Platform"
-                className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-              <div className="absolute right-8 bottom-8 left-8">
-                <span className="mb-4 inline-block rounded-full bg-blue-600 px-4 py-1 text-xs font-bold tracking-widest uppercase">
-                  Plataforma SaaS
-                </span>
-                <h3 className="mb-2 text-4xl font-bold text-white">
-                  FreshCar
-                </h3>
-                <p className="max-w-xl text-slate-300">
-                  Desarrollo de una plataforma integral para movilidad, con experiencia en producto, integración y escalabilidad SaaS.
+          <article className="group rounded-[2.5rem] glass-card lg:col-span-8 p-10" data-aos="fade-up">
+            <div className="mb-10 rounded-[2.5rem] overflow-hidden bg-slate-900/60 p-10">
+              <span className="mb-4 inline-block rounded-full bg-blue-600 px-4 py-1 text-xs font-bold tracking-widest uppercase">
+                Trayectoria
+              </span>
+              <h3 className="mb-6 text-4xl font-bold text-white">
+                Proyectos clave y productos en desarrollo
+              </h3>
+              <p className="max-w-3xl text-lg leading-relaxed text-slate-300">
+                He participado en el desarrollo de plataformas SaaS de alto impacto, liderando arquitecturas escalables y experiencias digitales.
+                Actualmente trabajo en ThrivePlanet, mientras que FreshCar refleja mi experiencia en movilidad inteligente y producto conectado.
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="rounded-[2rem] bg-slate-950/80 p-8">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-blue-400">FreshCar</p>
+                <h4 className="mb-3 text-2xl font-bold text-white">Plataforma de movilidad</h4>
+                <p className="text-slate-400">
+                  Desarrollo de un sistema SaaS para gestión de flotas, reservas y análisis de datos con enfoque UX y escalabilidad.
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] bg-slate-950/80 p-8">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-emerald-400">ThrivePlanet</p>
+                <h4 className="mb-3 text-2xl font-bold text-white">Plataforma actual</h4>
+                <p className="text-slate-400">
+                  Construcción de funcionalidades orientadas a sostenibilidad, energía y eficiencia, integrando datos y servicios para usuarios finales.
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] bg-slate-950/80 p-8">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-sky-400">SaaS</p>
+                <h4 className="mb-3 text-2xl font-bold text-white">Soluciones empresariales</h4>
+                <p className="text-slate-400">
+                  Experiencia en diseño de arquitecturas SaaS privadas y B2B, con integración de APIs, orquestación en la nube y enfoque en seguridad.
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] bg-slate-950/80 p-8">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-violet-400">Itch.io</p>
+                <h4 className="mb-3 text-2xl font-bold text-white">Videojuegos</h4>
+                <p className="text-slate-400">
+                  Desarrollo de videojuegos indie publicados en itch.io, combinando narrativa, mecánicas y programación cross-platform.
                 </p>
               </div>
             </div>
-            <div className="flex flex-wrap items-center justify-between gap-6 rounded-b-[2.5rem] p-8">
-              <div className="flex gap-4">
+
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
+              <div className="flex gap-3 flex-wrap">
                 <Tag>SaaS</Tag>
-                <Tag>React</Tag>
-                <Tag>Arquitectura</Tag>
+                <Tag>Movilidad</Tag>
+                <Tag>Plataforma</Tag>
+                <Tag>Videojuegos</Tag>
+                <Tag>UX</Tag>
               </div>
               <a
-                href="https://www.linkedin.com/in/alejandro-obregon/"
+                href="https://alexco99.itch.io/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 font-bold text-blue-400 group/btn hover:text-blue-300"
               >
-                Ver LinkedIn{' '}
+                Ver Itch.io{' '}
                 <i className="fas fa-arrow-right transition-transform group-hover/btn:translate-x-2" aria-hidden />
               </a>
             </div>
