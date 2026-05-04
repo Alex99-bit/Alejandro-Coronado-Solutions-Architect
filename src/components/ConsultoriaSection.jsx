@@ -18,47 +18,40 @@ export function ConsultoriaSection() {
             Ayudo a fundadores y equipos técnicos a navegar la complejidad de construir productos digitales de clase mundial.
           </p>
 
-          <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-slate-950/70 p-8 text-left">
+          <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-slate-950/70 p-8 text-center">
             <p className="mb-6 text-lg text-slate-300">
-              También puedes escribirme directamente por WhatsApp o email si prefieres una comunicación más rápida.
+              Puedes escribirme directamente por WhatsApp o por email; elige la opción que prefieras.
             </p>
-            <div className="grid gap-4 sm:grid-cols-2">
+
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={CONTACT_LINKS.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 px-6 py-4 text-center text-base font-bold text-white transition hover:bg-emerald-400"
+                aria-label="Contactar por WhatsApp"
+                className="group inline-flex items-center gap-4 rounded-2xl px-6 py-4 text-base font-semibold text-white transition-transform transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-emerald-400 shadow-lg bg-gradient-to-r from-emerald-600 to-emerald-500"
               >
-                <i className="fab fa-whatsapp text-xl" aria-hidden />
-                Whatsapp
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-white">
+                  <i className="fab fa-whatsapp text-xl" aria-hidden />
+                </span>
+                <span className="text-left leading-5">
+                  <span className="block font-bold">WhatsApp</span>
+                  <span className="text-xs text-white/80">Mensaje directo</span>
+                </span>
               </a>
+
               <a
                 href={CONTACT_LINKS.email}
-                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-blue-500 px-6 py-4 text-center text-base font-bold text-white transition hover:bg-blue-400"
+                aria-label="Enviar email"
+                className="group inline-flex items-center gap-4 rounded-2xl px-6 py-4 text-base font-semibold text-white transition-transform transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-lg bg-gradient-to-r from-blue-600 to-blue-500"
               >
-                <i className="fas fa-envelope text-xl" aria-hidden />
-                Email
-              </a>
-            </div>
-            <p className="mb-6 text-lg text-slate-300">
-              Puedes escribirme directamente por WhatsApp o email para iniciar la conversación.
-            </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <a
-                href={CONTACT_LINKS.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 px-6 py-4 text-center text-base font-bold text-white transition hover:bg-emerald-400"
-              >
-                <i className="fab fa-whatsapp text-xl" aria-hidden />
-                Whatsapp
-              </a>
-              <a
-                href={CONTACT_LINKS.email}
-                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-blue-500 px-6 py-4 text-center text-base font-bold text-white transition hover:bg-blue-400"
-              >
-                <i className="fas fa-envelope text-xl" aria-hidden />
-                Email
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-white">
+                  <i className="fas fa-envelope text-lg" aria-hidden />
+                </span>
+                <span className="text-left leading-5">
+                  <span className="block font-bold">Email</span>
+                  <span className="text-xs text-white/80">Enviar correo</span>
+                </span>
               </a>
             </div>
           </div>
