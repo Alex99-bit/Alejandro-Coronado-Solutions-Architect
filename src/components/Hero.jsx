@@ -1,4 +1,4 @@
-import heroImg from "../assets/Alex Coronado.jpeg";
+const heroImg = new URL("../assets/Alex Coronado.jpeg", import.meta.url).href;
 
 export function Hero() {
   return (
