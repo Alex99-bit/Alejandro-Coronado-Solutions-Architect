@@ -15,34 +15,36 @@ export function ProjectsSection() {
           <article className="group rounded-[2.5rem] glass-card lg:col-span-8" data-aos="fade-up">
             <div className="relative h-96 overflow-hidden rounded-t-[2.5rem] lg:rounded-t-[2.5rem]">
               <img
-                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1200"
-                alt="TravelAgency Connect"
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200"
+                alt="FreshCar Platform"
                 className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
               <div className="absolute right-8 bottom-8 left-8">
                 <span className="mb-4 inline-block rounded-full bg-blue-600 px-4 py-1 text-xs font-bold tracking-widest uppercase">
-                  Caso de Éxito
+                  Plataforma SaaS
                 </span>
                 <h3 className="mb-2 text-4xl font-bold text-white">
-                  TravelAgency Connect
+                  FreshCar
                 </h3>
                 <p className="max-w-xl text-slate-300">
-                  La infraestructura B2B que está digitalizando las agencias de viaje en Latinoamérica.
+                  Desarrollo de una plataforma integral para movilidad, con experiencia en producto, integración y escalabilidad SaaS.
                 </p>
               </div>
             </div>
             <div className="flex flex-wrap items-center justify-between gap-6 rounded-b-[2.5rem] p-8">
               <div className="flex gap-4">
-                <Tag>Next.js</Tag>
-                <Tag>Go</Tag>
-                <Tag>Kubernetes</Tag>
+                <Tag>SaaS</Tag>
+                <Tag>React</Tag>
+                <Tag>Arquitectura</Tag>
               </div>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/alejandro-obregon/"
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 font-bold text-blue-400 group/btn hover:text-blue-300"
               >
-                Ver Estudio de Caso{' '}
+                Ver LinkedIn{' '}
                 <i className="fas fa-arrow-right transition-transform group-hover/btn:translate-x-2" aria-hidden />
               </a>
             </div>
@@ -50,18 +52,25 @@ export function ProjectsSection() {
 
           <div className="flex flex-col gap-8 lg:col-span-4">
             <SideCard
-              icon="fa-layer-group"
-              iconWrap="bg-blue-500/20 text-blue-500"
-              title="Arquitectura"
-              body="Diseño de sistemas preparados para soportar millones de peticiones diarias."
+              icon="fa-leaf"
+              iconWrap="bg-emerald-500/20 text-emerald-500"
+              title="ThrivePlanet"
+              body="Actualmente colaboro en ThrivePlanet, desarrollando la plataforma con enfoque en sostenibilidad y experiencia de usuario."
               aosDelay={100}
             />
             <SideCard
-              icon="fa-rocket"
-              iconWrap="bg-purple-500/20 text-purple-500"
-              title="Lanzamientos"
-              body="Estrategias de despliegue y validación de mercado para nuevos productos."
+              icon="fa-cloud"
+              iconWrap="bg-sky-500/20 text-sky-500"
+              title="Desarrollo SaaS"
+              body="Diseño y construcción de soluciones SaaS privadas y B2B que conectan producto, datos y servicios en la nube."
               aosDelay={200}
+            />
+            <SideCard
+              icon="fa-gamepad"
+              iconWrap="bg-violet-500/20 text-violet-500"
+              title="Videojuegos"
+              body="He creado varios videojuegos publicados en itch.io, combinando diseño, programación y experiencia orientada al jugador."
+              aosDelay={300}
             />
           </div>
         </div>
