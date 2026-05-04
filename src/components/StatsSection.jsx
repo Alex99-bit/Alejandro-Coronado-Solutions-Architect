@@ -6,24 +6,24 @@ export function StatsSection() {
           <StatCard
             label="Experiencia"
             headline={<>10<span className="text-blue-500">+</span></>}
-            subtitle="Años Programando"
+            subtitle="Años en Tecnología"
             aosDelay={100}
           />
           <StatCard
             label="Negocios"
-            headline="SaaS"
-            subtitle="Fundador Serial"
+            headline="Desarrollo Personalizado"
+            subtitle="Fundador"
             aosDelay={200}
           />
           <StatCard
             label="Comunidad"
-            headline="50K"
-            subtitle="En Youtube"
+            headline="+400"
+            subtitle="En Instagram"
             aosDelay={300}
           />
           <StatCard
             label="Alcance"
-            headline="Glob"
+            headline="Global"
             subtitle="Impacto Digital"
             aosDelay={400}
           />
