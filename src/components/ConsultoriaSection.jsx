@@ -1,3 +1,5 @@
+import { CONTACT_LINKS } from '../data/links.js'
+
 export function ConsultoriaSection({ onSubmitSuccess }) {
   function handleSubmit(e) {
     e.preventDefault()
@@ -58,6 +60,30 @@ export function ConsultoriaSection({ onSubmitSuccess }) {
               Enviar Mensaje Directo
             </button>
           </form>
+
+          <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-slate-950/70 p-8 text-left">
+            <p className="mb-6 text-lg text-slate-300">
+              También puedes escribirme directamente por WhatsApp o email si prefieres una comunicación más rápida.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <a
+                href={CONTACT_LINKS.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 px-6 py-4 text-center text-base font-bold text-white transition hover:bg-emerald-400"
+              >
+                <i className="fab fa-whatsapp text-xl" aria-hidden />
+                Whatsapp
+              </a>
+              <a
+                href={CONTACT_LINKS.email}
+                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-blue-500 px-6 py-4 text-center text-base font-bold text-white transition hover:bg-blue-400"
+              >
+                <i className="fas fa-envelope text-xl" aria-hidden />
+                Email
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

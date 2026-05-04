@@ -37,9 +37,9 @@ export function ProjectsSection() {
 
               <div className="rounded-[2rem] bg-slate-950/80 p-8">
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-emerald-400">ThrivePlanet</p>
-                <h4 className="mb-3 text-2xl font-bold text-white">Plataforma actual</h4>
+                <h4 className="mb-3 text-2xl font-bold text-white">Plataforma Innovadora</h4>
                 <p className="text-slate-400">
-                  Construcción de funcionalidades orientadas a sostenibilidad, energía y eficiencia, integrando datos y servicios para usuarios finales.
+                  Construcción de funcionalidades orientadas a consumo sostenible y experiencia de usuario renovada para la WEB 4.0.
                 </p>
               </div>
 

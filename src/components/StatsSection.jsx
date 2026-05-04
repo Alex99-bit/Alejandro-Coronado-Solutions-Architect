@@ -11,7 +11,7 @@ export function StatsSection() {
           />
           <StatCard
             label="Negocios"
-            headline="Desarrollo Personalizado"
+            headline="Consultor TI"
             subtitle="Fundador"
             aosDelay={200}
           />
