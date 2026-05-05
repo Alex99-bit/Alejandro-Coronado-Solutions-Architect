@@ -20,13 +20,13 @@ export function Hero() {
               Disponible para Proyectos
             </div>
             <h1 className="mb-8 text-6xl leading-[1.1] font-extrabold tracking-tight md:text-8xl">
-              Transformamos <br />
-              <span className="gradient-text">procesos industriales</span>
+              Plataformas, <br />
+              <span className="gradient-text">XR</span> y soluciones a medida
               <br />
-              con software a medida
+              para tu empresa
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              Aceleramos la digitalización de PyMEs y empresas industriales con soluciones a medida (apps, plataformas, CRM/ERP y experiencias XR). Trabajo con tomadores de decisión para diseñar e implementar proyectos que generan impacto y retorno. Respaldo técnico: Gamespiration y Fyware.
+              Plataformas web, apps y experiencias XR para capacitación y marketing. Soluciones prácticas para tomadores de decisión; represento comercialmente a gamespiration y Fyware y colaboro con ellas en la ejecución técnica.
             </p>
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
               <a
@@ -39,7 +39,7 @@ export function Hero() {
                 href={CONTACT_LINKS.email}
                 className="flex items-center gap-3 rounded-2xl border border-slate-700 px-10 py-5 text-lg font-bold transition-all hover:bg-slate-800"
               >
-                Hablemos
+                Hablar con un experto
               </a>
             </div>
           </div>
