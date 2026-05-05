@@ -42,7 +42,7 @@ export function SiteFooter() {
           </a>
         </div>
         <p className="text-xs text-slate-400 mb-4">
-          Colaboro ocasionalmente con gamespiration y Fyware en proyectos de desarrollo y XR.
+          Colaboro con gamespiration y Fyware en proyectos de desarrollo y XR.
         </p>
         <p className="text-sm text-slate-500">
           © {year} Alex Coronado Brand. Construido para el mañana.
