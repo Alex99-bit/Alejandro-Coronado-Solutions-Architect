@@ -1,3 +1,5 @@
+import { SOCIAL_LINKS, CONTACT_LINKS } from '../data/links.js'
+
 const sectionLead =
   'max-w-none text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0'
 const subsectionTitle =
@@ -21,6 +23,31 @@ export function ProfessionalProfile() {
           <p className={sectionLead}>
             Este portafolio presenta a Alex Coronado como software dev, solutions architect y technical sales con mentalidad de fundador: el código es la herramienta y la arquitectura el medio para construir soluciones de impacto.
           </p>
+            <div className="mt-6 flex flex-col sm:flex-row items-start gap-4">
+              <a
+                href={CONTACT_LINKS.resume}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-white bg-slate-800 border border-white/5 hover:bg-slate-900"
+              >
+                <i className="fas fa-file-download" aria-hidden />
+                Descargar CV
+              </a>
+
+              <a
+                href={SOCIAL_LINKS.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-white border border-white/5 hover:bg-slate-900"
+              >
+                <i className="fab fa-github" aria-hidden />
+                Ver GitHub
+              </a>
+
+              <p className="mt-3 text-sm text-slate-400">
+                Si eres reclutador: disponible para roles de desarrollo. Descarga mi CV o revisa mis repositorios públicos.
+              </p>
+            </div>
         </header>
 
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
