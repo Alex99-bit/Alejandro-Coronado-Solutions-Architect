@@ -1,3 +1,5 @@
+import { CONTACT_LINKS } from "../data/links";
+
 const heroImg = new URL("../assets/Alex Coronado.jpeg", import.meta.url).href;
 
 export function Hero() {
@@ -18,24 +20,26 @@ export function Hero() {
               Disponible para Proyectos
             </div>
             <h1 className="mb-8 text-6xl leading-[1.1] font-extrabold tracking-tight md:text-8xl">
-              Software a medida para <br />
-              <span className="gradient-text">optimizar operaciones</span>
+              Transformamos <br />
+              <span className="gradient-text">procesos industriales</span>
+              <br />
+              con software a medida
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              Desarrollo software a medida para PyMEs y empresas industriales. Trabajo con tomadores de decisión para optimizar procesos, reducir costos y acelerar resultados. Cuento con el respaldo de Gamespiration (apps, CRM/ERP, assets 2D/3D) y Fyware (soluciones XR para capacitación y marketing).
+              Aceleramos la digitalización de PyMEs y empresas industriales con soluciones a medida (apps, plataformas, CRM/ERP y experiencias XR). Trabajo con tomadores de decisión para diseñar e implementar proyectos que generan impacto y retorno. Respaldo técnico: Gamespiration y Fyware.
             </p>
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
               <a
                 href="#proyectos"
                 className="btn-fancy rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-5 text-lg font-bold shadow-lg shadow-blue-500/20"
               >
-                Explorar Proyectos
+                Ver soluciones
               </a>
               <a
-                href="#contenido"
+                href={CONTACT_LINKS.email}
                 className="flex items-center gap-3 rounded-2xl border border-slate-700 px-10 py-5 text-lg font-bold transition-all hover:bg-slate-800"
               >
-                Ver Contenido <i className="fas fa-play text-sm" aria-hidden />
+                Hablemos
               </a>
             </div>
           </div>
