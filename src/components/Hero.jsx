@@ -18,11 +18,11 @@ export function Hero() {
               Disponible para Proyectos
             </div>
             <h1 className="mb-8 text-6xl leading-[1.1] font-extrabold tracking-tight md:text-8xl">
-              De Programador a <br />
-              <span className="gradient-text">Fundador</span>
+              Software a medida para <br />
+              <span className="gradient-text">optimizar operaciones</span>
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              Soy software dev, solutions architect y technical sales. Mi mentalidad de fundador usa el código como herramienta y la arquitectura como medio para construir soluciones de impacto.
+              Desarrollo software a medida para PyMEs y empresas industriales. Trabajo con tomadores de decisión para optimizar procesos, reducir costos y acelerar resultados. Cuento con el respaldo de Gamespiration (apps, CRM/ERP, assets 2D/3D) y Fyware (soluciones XR para capacitación y marketing).
             </p>
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
               <a
