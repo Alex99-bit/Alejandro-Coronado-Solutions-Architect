@@ -26,7 +26,7 @@ export function Hero() {
               para tu empresa
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              Plataformas web, apps y experiencias XR para capacitación y marketing. Soluciones prácticas para tomadores de decisión; represento comercialmente a gamespiration y Fyware y colaboro con ellas en la ejecución técnica.
+              Plataformas web, apps y experiencias XR para capacitación y marketing. Soluciones prácticas para tomadores de decisión. Colaboro con gamespiration y Fyware en la ejecución técnica cuando procede.
             </p>
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
               <a

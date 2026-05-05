@@ -27,18 +27,18 @@ export function buildSeo({ title, description, pathname = '/', image, keywords =
     "name": "Alex Coronado",
     "url": canonical,
     "image": ogImage,
-    "jobTitle": "Software Developer, Solutions Architect y Technical Sales; vendedor/representante de gamespiration y Fyware",
-    "description": description || "Desarrollo software a medida para PyMEs y empresas industriales. Represento comercialmente a gamespiration y Fyware.",
+    "jobTitle": "Software Developer, Solutions Architect y Technical Sales",
+    "description": description || "Desarrollo software a medida para PyMEs y empresas industriales. Colaboro con gamespiration y Fyware cuando procede.",
     "affiliation": [
       {
         "@type": "Organization",
         "name": "gamespiration",
-        "description": "Desarrollo de apps, plataformas, CRM/ERP y creación de assets 2D/3D. Representado comercialmente por Alex Coronado."
+        "description": "Colaboración en proyectos de desarrollo de apps, plataformas y creación de assets 2D/3D junto a Alex Coronado."
       },
       {
         "@type": "Organization",
         "name": "Fyware",
-        "description": "Soluciones XR (VR/AR) para entrenamiento, capacitación y experiencias de marketing. Representado comercialmente por Alex Coronado."
+        "description": "Colaboración en soluciones XR (VR/AR) para entrenamiento, capacitación y experiencias de marketing junto a Alex Coronado."
       }
     ]
   };
