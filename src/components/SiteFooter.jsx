@@ -42,10 +42,10 @@ export function SiteFooter() {
           </a>
         </div>
         <p className="text-xs text-slate-400 mb-4">
-          Colaboro con gamespiration y Fyware en proyectos de desarrollo y XR.
+          I collaborate with gamespiration and Fyware on development and XR projects.
         </p>
         <p className="text-sm text-slate-500">
-          © {year} Alex Coronado Brand. Construido para el mañana.
+          © {year} Alex Coronado Brand. Built for tomorrow.
         </p>
       </div>
     </footer>

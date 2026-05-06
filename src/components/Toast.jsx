@@ -15,8 +15,8 @@ export function Toast({ visible }) {
           <i className="fas fa-check" aria-hidden />
         </div>
         <div>
-          <p className="font-bold">¡Mensaje Recibido!</p>
-          <p className="text-xs text-slate-400">Me pondré en contacto muy pronto.</p>
+          <p className="font-bold">Message received!</p>
+          <p className="text-xs text-slate-400">I'll get back to you shortly.</p>
         </div>
       </div>
     </div>

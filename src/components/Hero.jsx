@@ -17,29 +17,29 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500" />
               </span>
-              Disponible para Proyectos
+              Available for Projects
             </div>
             <h1 className="mb-8 text-6xl leading-[1.1] font-extrabold tracking-tight md:text-8xl">
-              Plataformas, <br />
-              <span className="gradient-text">XR</span> y soluciones a medida
+              Platforms, <br />
+              <span className="gradient-text">XR</span> and custom solutions
               <br />
-              para tu empresa
+              for your enterprise
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              Plataformas web, apps y experiencias XR para capacitación y marketing. Soluciones prácticas para tomadores de decisión. Colaboro con gamespiration y Fyware en la ejecución técnica cuando procede.
+              Web platforms, apps, and XR experiences for training and marketing. Practical solutions for decision-makers. I collaborate with gamespiration and Fyware on technical delivery when appropriate.
             </p>
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
               <a
-                href="#proyectos"
+                href="#projects"
                 className="btn-fancy rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-5 text-lg font-bold shadow-lg shadow-blue-500/20"
               >
-                Ver soluciones
+                Explore solutions
               </a>
               <a
                 href={CONTACT_LINKS.email}
                 className="flex items-center gap-3 rounded-2xl border border-slate-700 px-10 py-5 text-lg font-bold transition-all hover:bg-slate-800"
               >
-                Hablar con un experto
+                Talk to an expert
               </a>
             </div>
           </div>

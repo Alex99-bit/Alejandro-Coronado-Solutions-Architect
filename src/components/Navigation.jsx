@@ -20,23 +20,23 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
           </a>
 
           <div className="hidden items-center gap-10 md:flex">
-            <a href="#perfil" className={desktopLink}>
-              Perfil
+            <a href="#about" className={desktopLink}>
+              About
             </a>
-            <a href="#historia" className={desktopLink}>
-              Historia
+            <a href="#highlights" className={desktopLink}>
+              Highlights
             </a>
-            <a href="#proyectos" className={desktopLink}>
-              Proyectos
+            <a href="#projects" className={desktopLink}>
+              Projects
             </a>
-            <a href="#contenido" className={desktopLink}>
-              Contenido
+            <a href="#content" className={desktopLink}>
+              Content
             </a>
             <a
-              href="#consultoria"
+              href="#consulting"
               className="btn-fancy rounded-full bg-white px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-black transition-all hover:scale-105 active:scale-95"
             >
-              Hablemos
+              Let's Talk
             </a>
           </div>
 
@@ -45,7 +45,7 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
             className={`z-[110] flex h-5 w-8 flex-col justify-between md:hidden ${menuOpen ? 'burger-active' : ''}`}
             id="burgerBtn"
             aria-expanded={menuOpen}
-            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             onClick={onToggleMenu}
           >
             <span className="burger-line line1 h-0.5 w-full bg-white" />
@@ -62,20 +62,20 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
         aria-hidden={!menuOpen}
       >
         <div className="flex flex-col items-center space-y-8 text-center">
-          <MobileNavLink delay="0.1s" href="#perfil" onNavigate={onToggleMenu}>
-            Perfil
+          <MobileNavLink delay="0.1s" href="#about" onNavigate={onToggleMenu}>
+            About
           </MobileNavLink>
-          <MobileNavLink delay="0.2s" href="#historia" onNavigate={onToggleMenu}>
-            Historia
+          <MobileNavLink delay="0.2s" href="#highlights" onNavigate={onToggleMenu}>
+            Highlights
           </MobileNavLink>
-          <MobileNavLink delay="0.25s" href="#proyectos" onNavigate={onToggleMenu}>
-            Proyectos
+          <MobileNavLink delay="0.25s" href="#projects" onNavigate={onToggleMenu}>
+            Projects
           </MobileNavLink>
-          <MobileNavLink delay="0.3s" href="#contenido" onNavigate={onToggleMenu}>
-            Contenido
+          <MobileNavLink delay="0.3s" href="#content" onNavigate={onToggleMenu}>
+            Content
           </MobileNavLink>
-          <MobileNavLink delay="0.4s" href="#consultoria" onNavigate={onToggleMenu}>
-            Consultoría
+          <MobileNavLink delay="0.4s" href="#consulting" onNavigate={onToggleMenu}>
+            Consulting
           </MobileNavLink>
 
           <div

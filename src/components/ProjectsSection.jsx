@@ -1,13 +1,13 @@
 export function ProjectsSection() {
   return (
-    <section className="py-32" id="proyectos">
+    <section className="py-32" id="projects">
       <div className="container mx-auto px-6">
         <div className="mb-20 max-w-3xl" data-aos="fade-right">
           <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-            Proyectos <span className="gradient-text">Destacados</span>
+            Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-xl leading-relaxed text-slate-400">
-            Donde la tecnología se encuentra con la viabilidad comercial.
+            Where technology meets commercial viability.
           </p>
         </div>
 
@@ -15,47 +15,46 @@ export function ProjectsSection() {
           <article className="group rounded-[2.5rem] glass-card lg:col-span-8 p-10" data-aos="fade-up">
             <div className="mb-10 rounded-[2.5rem] overflow-hidden bg-slate-900/60 p-10">
               <span className="mb-4 inline-block rounded-full bg-blue-600 px-4 py-1 text-xs font-bold tracking-widest uppercase">
-                Trayectoria
+                Track Record
               </span>
               <h3 className="mb-6 text-4xl font-bold text-white">
-                Proyectos clave y productos en desarrollo
+                Key projects and products in development
               </h3>
               <p className="max-w-3xl text-lg leading-relaxed text-slate-300">
-                He participado en el desarrollo de plataformas SaaS de alto impacto, liderando arquitecturas escalables y experiencias digitales.
-                Actualmente trabajo en ThrivePlanet, mientras que FreshCar refleja mi experiencia en movilidad inteligente y producto conectado.
+                I have contributed to high-impact SaaS platforms, leading scalable architectures and digital experiences. Currently working on ThrivePlanet, while FreshCar reflects experience in smart mobility and connected products.
               </p>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="rounded-[2rem] bg-slate-950/80 p-8">
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-blue-400">FreshCar</p>
-                <h4 className="mb-3 text-2xl font-bold text-white">Plataforma de movilidad</h4>
+                <h4 className="mb-3 text-2xl font-bold text-white">Mobility platform</h4>
                 <p className="text-slate-400">
-                  Desarrollo de un sistema SaaS para gestión de flotas, reservas y análisis de datos con enfoque UX y escalabilidad.
+                  Development of a SaaS system for fleet management, bookings and data analytics with a UX and scalability focus.
                 </p>
               </div>
 
               <div className="rounded-[2rem] bg-slate-950/80 p-8">
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-emerald-400">ThrivePlanet</p>
-                <h4 className="mb-3 text-2xl font-bold text-white">Plataforma Innovadora</h4>
+                <h4 className="mb-3 text-2xl font-bold text-white">Innovative platform</h4>
                 <p className="text-slate-400">
-                  Construcción de funcionalidades orientadas a consumo sostenible y experiencia de usuario renovada para la WEB 4.0.
+                  Building features focused on sustainable consumption and a renewed user experience for the modern web.
                 </p>
               </div>
 
               <div className="rounded-[2rem] bg-slate-950/80 p-8">
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-sky-400">SaaS</p>
-                <h4 className="mb-3 text-2xl font-bold text-white">Soluciones empresariales</h4>
+                <h4 className="mb-3 text-2xl font-bold text-white">Enterprise solutions</h4>
                 <p className="text-slate-400">
-                  Experiencia en diseño de arquitecturas SaaS privadas y B2B, con integración de APIs, orquestación en la nube y enfoque en seguridad.
+                  Experienced in designing private and B2B SaaS architectures, API integrations, cloud orchestration and a security-first approach.
                 </p>
               </div>
 
               <div className="rounded-[2rem] bg-slate-950/80 p-8">
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-violet-400">Itch.io</p>
-                <h4 className="mb-3 text-2xl font-bold text-white">Videojuegos</h4>
+                <h4 className="mb-3 text-2xl font-bold text-white">Games</h4>
                 <p className="text-slate-400">
-                  Desarrollo de videojuegos indie publicados en itch.io, combinando narrativa, mecánicas y programación cross-platform.
+                  Indie games published on itch.io, combining narrative, mechanics and cross-platform development.
                 </p>
               </div>
             </div>
@@ -74,7 +73,7 @@ export function ProjectsSection() {
                 rel="noreferrer"
                 className="flex items-center gap-2 font-bold text-blue-400 group/btn hover:text-blue-300"
               >
-                Ver Itch.io{' '}
+                View Itch.io{' '}
                 <i className="fas fa-arrow-right transition-transform group-hover/btn:translate-x-2" aria-hidden />
               </a>
             </div>
@@ -85,21 +84,21 @@ export function ProjectsSection() {
               icon="fa-leaf"
               iconWrap="bg-emerald-500/20 text-emerald-500"
               title="ThrivePlanet"
-              body="Actualmente colaboro en ThrivePlanet, desarrollando la plataforma con enfoque en sostenibilidad y experiencia de usuario."
+              body="I currently collaborate on ThrivePlanet, developing the platform with a focus on sustainability and user experience."
               aosDelay={100}
             />
             <SideCard
               icon="fa-cloud"
               iconWrap="bg-sky-500/20 text-sky-500"
-              title="Desarrollo SaaS"
-              body="Diseño y construcción de soluciones SaaS privadas y B2B que conectan producto, datos y servicios en la nube."
+              title="SaaS Development"
+              body="Design and build of private and B2B SaaS solutions that connect product, data and cloud services."
               aosDelay={200}
             />
             <SideCard
               icon="fa-gamepad"
               iconWrap="bg-violet-500/20 text-violet-500"
-              title="Videojuegos"
-              body="He creado varios videojuegos publicados en itch.io, combinando diseño, programación y experiencia orientada al jugador."
+              title="Games"
+              body="I have created several games published on itch.io, combining design, programming and player-focused experience."
               aosDelay={300}
             />
           </div>

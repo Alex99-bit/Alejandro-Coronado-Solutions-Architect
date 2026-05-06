@@ -6,8 +6,8 @@ export const SOCIAL_LINKS = {
 }
 
 export const CONTACT_LINKS = {
-  whatsapp: 'https://wa.me/524441304280?text=Hola%20Alejandro%2C%20quiero%20consultar%20sobre%20un%20proyecto',
-  email: 'mailto:alejandro.co.dev@gmail.com?subject=Contacto%20desde%20la%20web&body=Hola%20Alejandro%2C%0A%0AQuisiera%20hablar%20sobre%20un%20proyecto%20de%20software.',
+  whatsapp: 'https://wa.me/524441304280?text=Hi%20Alex%2C%20I%20would%20like%20to%20discuss%20a%20project%20or%20opportunity.',
+  email: 'mailto:alejandro.co.dev@gmail.com?subject=Contact%20from%20website&body=Hi%20Alex%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project%20or%20opportunity.%0A%0ARegards%2C%0A',
   resume: '/Carlos%20Alejandro%20Coronado%20Obreg%C3%B3n%20-%20CV.pdf'
 }
 

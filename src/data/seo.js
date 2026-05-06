@@ -16,10 +16,21 @@
  */
 
 export function buildSeo({ title, description, pathname = '/', image, keywords = [] } = {}) {
-  const siteTitle = 'Alex Coronado — Software para PyMEs e Industria';
+  const siteTitle = 'Alex Coronado — Software Engineer & Solutions Architect';
   const pageTitle = title ? `${title} · ${siteTitle}` : siteTitle;
   const canonical = process.env.VITE_SITE_URL ? new URL(pathname, process.env.VITE_SITE_URL).toString() : '__SITE_CANONICAL__';
   const ogImage = image || 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1200&h=630&fit=crop&q=80';
+  const defaultKeywords = [
+    'solutions architect',
+    'enterprise software',
+    'B2B SaaS',
+    'technical sales',
+    'digital transformation',
+    'XR training',
+    'software engineer',
+    'scalable architecture'
+  ];
+  const finalKeywords = Array.isArray(keywords) && keywords.length ? keywords : defaultKeywords;
 
   const jsonLdPerson = {
     "@context": "https://schema.org",
@@ -27,18 +38,18 @@ export function buildSeo({ title, description, pathname = '/', image, keywords =
     "name": "Alex Coronado",
     "url": canonical,
     "image": ogImage,
-    "jobTitle": "Software Developer, Solutions Architect y Technical Sales",
-    "description": description || "Desarrollo software a medida para PyMEs y empresas industriales. Colaboro con gamespiration y Fyware cuando procede.",
+    "jobTitle": "Software Engineer, Solutions Architect & Technical Sales",
+    "description": description || "I build scalable B2B SaaS platforms, XR training experiences, and enterprise digital products. I collaborate with gamespiration and Fyware on technical delivery when appropriate.",
     "affiliation": [
       {
         "@type": "Organization",
         "name": "gamespiration",
-        "description": "Colaboración en proyectos de desarrollo de apps, plataformas y creación de assets 2D/3D junto a Alex Coronado."
+        "description": "Collaboration on app and platform development and 2D/3D asset creation with Alex Coronado."
       },
       {
         "@type": "Organization",
         "name": "Fyware",
-        "description": "Colaboración en soluciones XR (VR/AR) para entrenamiento, capacitación y experiencias de marketing junto a Alex Coronado."
+        "description": "Collaboration on XR (VR/AR) solutions for training, upskilling and marketing experiences with Alex Coronado."
       }
     ]
   };
@@ -57,7 +68,7 @@ export function buildSeo({ title, description, pathname = '/', image, keywords =
     canonical,
     metaTags: [
       { name: 'description', content: description || '' },
-      { name: 'keywords', content: Array.isArray(keywords) ? keywords.join(', ') : keywords },
+      { name: 'keywords', content: Array.isArray(finalKeywords) ? finalKeywords.join(', ') : finalKeywords },
       { name: 'robots', content: 'index,follow,max-image-preview:large' }
     ],
     og: {

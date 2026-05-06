@@ -1,30 +1,30 @@
 export function StatsSection() {
   return (
-    <section className="border-y border-white/5 py-24" id="historia">
+    <section className="border-y border-white/5 py-24" id="highlights">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 gap-12 md:grid-cols-4">
           <StatCard
-            label="Experiencia"
+            label="Experience"
             headline={<>10<span className="text-blue-500">+</span></>}
-            subtitle="Años en Tecnología"
+            subtitle="Years in Tech"
             aosDelay={100}
           />
           <StatCard
-            label="Negocios"
-            headline="Consultor TI"
-            subtitle="Fundador"
+            label="Business"
+            headline="IT Consultant"
+            subtitle="Founder"
             aosDelay={200}
           />
           <StatCard
-            label="Comunidad"
+            label="Community"
             headline="+400"
-            subtitle="En Instagram"
+            subtitle="On Instagram"
             aosDelay={300}
           />
           <StatCard
-            label="Alcance"
+            label="Reach"
             headline="Global"
-            subtitle="Impacto Digital"
+            subtitle="Digital Impact"
             aosDelay={400}
           />
         </div>

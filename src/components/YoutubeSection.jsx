@@ -3,19 +3,19 @@ import { SOCIAL_LINKS, YOUTUBE_EMBEDS } from '../data/links.js'
 const featuredVideos = [
   {
     id: YOUTUBE_EMBEDS.featured[0],
-    title: 'Mentalidad de Fundador para Devs',
+    title: 'Founder Mindset for Developers',
     meta: 'Masterclass • 6 min',
   },
   {
     id: YOUTUBE_EMBEDS.featured[1],
-    title: 'El error de los mil dólares',
+    title: 'The $1,000 Mistake',
     meta: 'Masterclass • 12 min',
   },
 ]
 
 export function YoutubeSection() {
   return (
-    <section className="relative overflow-hidden bg-slate-900/40 py-32" id="contenido">
+    <section className="relative overflow-hidden bg-slate-900/40 py-32" id="content">
       <div className="container relative z-10 mx-auto px-6">
         <div
           className="mb-20 flex flex-col items-center justify-between gap-8 md:flex-row"
@@ -23,10 +23,10 @@ export function YoutubeSection() {
         >
           <div className="text-center md:text-left">
             <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-              Contenido que <span className="gradient-text">Inspira</span>
+              Content that <span className="gradient-text">Inspires</span>
             </h2>
             <p className="text-lg text-slate-400">
-              Lecciones sobre código y negocios desde las trincheras.
+              Lessons on code and business from the trenches.
             </p>
           </div>
           <a
@@ -36,7 +36,7 @@ export function YoutubeSection() {
             className="btn-fancy flex items-center gap-3 rounded-2xl bg-red-600 px-8 py-4 font-bold"
           >
             <i className="fab fa-youtube text-2xl" aria-hidden />
-            Suscríbete al Canal
+            Subscribe
           </a>
         </div>
 
