@@ -290,12 +290,15 @@ html, body, #root {
 
 /* Mobile adjustments: simplify heavy visuals, ensure content fits */
 @media (max-width: 640px) {
-  .scroll-3d { display: none; }
-  .cube-wrapper { display: none !important; }
+  /* show simplified 3D mesh on mobile with reduced sizes */
+  .scroll-3d { display: block; pointer-events: none; }
+  .cube-wrapper { width: 110px !important; height: 110px !important; --cube-depth: 55px !important; transform-origin: center center; }
+  .cube { animation-duration: 8s; }
   .blob { width: 340px; height: 340px; filter: blur(64px); }
   .particle { filter: blur(0.4px); opacity: 0.65; }
   .glass-card { padding: 0.75rem; border-radius: 0.75rem; }
   body { font-size: 15px; }
+  #burgerBtn { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); }
 }
 
 @media (max-width: 420px) {
@@ -303,6 +306,7 @@ html, body, #root {
   .particle { filter: blur(0.3px); opacity: 0.6; }
   body { font-size: 14px; }
   .glass-card { padding: 0.5rem; border-radius: 0.5rem; }
+  .cube-wrapper { width: 90px !important; height: 90px !important; --cube-depth: 44px !important; }
 }
 
 @media (orientation: landscape) and (max-width: 812px) {
