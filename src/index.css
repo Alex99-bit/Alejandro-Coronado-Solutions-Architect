@@ -57,6 +57,74 @@ body {
   }
 }
 
+/* Scroll-driven 3D mesh of cubes */
+.scroll-3d {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  perspective: 1400px;
+}
+.cube-wrapper {
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  width: 220px;
+  height: 220px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform 0.18s linear;
+  will-change: transform;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.45));
+}
+.cube-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-origin: center center;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.44), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.face-front  { transform: translateZ(var(--cube-depth, 110px)); background: linear-gradient(135deg, rgba(96,165,250,0.14), rgba(168,85,247,0.10)); backdrop-filter: blur(4px); }
+.face-back   { transform: rotateY(180deg) translateZ(var(--cube-depth, 110px)); background: linear-gradient(135deg, rgba(168,85,247,0.10), rgba(96,165,250,0.14)); backdrop-filter: blur(3px); filter: brightness(0.94); }
+.face-right  { transform: rotateY(90deg) translateZ(var(--cube-depth, 110px));  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,211,238,0.06)); filter: brightness(0.9); }
+.face-left   { transform: rotateY(-90deg) translateZ(var(--cube-depth, 110px)); background: linear-gradient(135deg, rgba(34,211,238,0.06), rgba(99,102,241,0.08)); filter: brightness(0.9); }
+.face-top    { transform: rotateX(90deg) translateZ(var(--cube-depth, 110px));  background: linear-gradient(135deg, rgba(96,165,250,0.06), rgba(168,85,247,0.06)); filter: brightness(0.96); }
+.face-bottom { transform: rotateX(-90deg) translateZ(var(--cube-depth, 110px)); background: linear-gradient(135deg, rgba(96,165,250,0.04), rgba(168,85,247,0.04)); filter: brightness(0.92); }
+
+@keyframes floaty {
+  0% { transform: translateY(0) rotateX(0) rotateY(0); }
+  50% { transform: translateY(-8px) rotateX(1deg) rotateY(2deg); }
+  100% { transform: translateY(0) rotateX(0) rotateY(0); }
+}
+.cube { animation: floaty 6s ease-in-out infinite; }
+
+@media (max-width: 768px) {
+  .cube-wrapper {
+    right: 4%;
+    top: 12%;
+    width: 140px;
+    height: 140px;
+  }
+  .cube { animation-duration: 8s; }
+}
+
 .gradient-text {
   background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
   background-clip: text;
@@ -65,19 +133,45 @@ body {
 }
 
 .glass-card {
-  background: rgb(15 23 42 / 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgb(255 255 255 / 0.08);
-  transition:
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  transition: transform 0.36s cubic-bezier(0.2, 0.9, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  left: -40%;
+  top: -40%;
+  width: 200%;
+  height: 60%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02), rgba(255,255,255,0.06));
+  transform: rotate(-20deg);
+  opacity: 0.36;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.2,0.9,0.3,1), opacity 0.3s ease;
+  mix-blend-mode: overlay;
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(0,0,0,0.15);
 }
 
 .glass-card:hover {
-  border-color: rgb(96 165 250 / 0.4);
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px -20px rgb(0 0 0 / 0.5);
+  border-color: rgba(96,165,250,0.48);
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(2,6,23,0.65);
 }
 
 /* Menú Mobile Overlay */
@@ -148,6 +242,69 @@ body {
   left: 100%;
 }
 
+/* Particle layer (mouse-reactive) */
+.particle-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(96,165,250,0.18), rgba(168,85,247,0.12));
+  filter: blur(0.6px);
+  will-change: transform, opacity;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  transform-origin: center;
+  transition: opacity 0.25s linear;
+}
+
 .aspect-short {
   aspect-ratio: 9 / 16;
+}
+
+/* Prevent horizontal pan/overflow on mobile and ensure header children can shrink */
+html, body, #root {
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+/* Make nav container children shrink when necessary so the burger stays visible */
+#mainNav .container > * {
+  min-width: 0;
+}
+
+#burgerBtn {
+  flex-shrink: 0;
+}
+
+/* Ensure mobile overlay doesn't contribute to horizontal layout shifts */
+.mobile-overlay {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Mobile adjustments: simplify heavy visuals, ensure content fits */
+@media (max-width: 640px) {
+  .scroll-3d { display: none; }
+  .cube-wrapper { display: none !important; }
+  .blob { width: 340px; height: 340px; filter: blur(64px); }
+  .particle { filter: blur(0.4px); opacity: 0.65; }
+  .glass-card { padding: 0.75rem; border-radius: 0.75rem; }
+  body { font-size: 15px; }
+}
+
+@media (max-width: 420px) {
+  .blob { width: 260px; height: 260px; filter: blur(56px); }
+  .particle { filter: blur(0.3px); opacity: 0.6; }
+  body { font-size: 14px; }
+  .glass-card { padding: 0.5rem; border-radius: 0.5rem; }
+}
+
+@media (orientation: landscape) and (max-width: 812px) {
+  .glass-card { max-width: 92vw; }
 }
