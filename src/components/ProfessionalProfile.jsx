@@ -35,6 +35,16 @@ export function ProfessionalProfile() {
               </a>
 
               <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-white border border-white/5 hover:bg-slate-900"
+              >
+                <i className="fab fa-linkedin" aria-hidden />
+                View LinkedIn
+              </a>
+
+              <a
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noreferrer"
@@ -44,8 +54,18 @@ export function ProfessionalProfile() {
                 View GitHub
               </a>
 
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-white border border-white/5 hover:bg-slate-900"
+              >
+                <i className="fab fa-instagram" aria-hidden />
+                Instagram
+              </a>
+
               <p className="mt-3 text-sm text-slate-400">
-                If you're a recruiter: available for development roles. Download my CV or review my public repositories.
+                If you're a recruiter: available for development roles. Download my CV or review my public LinkedIn, GitHub and Instagram.
               </p>
             </div>
         </header>

@@ -22,20 +22,26 @@ export function SiteFooter() {
           <a
             href={SOCIAL_LINKS.linkedin}
             className="text-slate-500 transition-all hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <i className="fab fa-linkedin-in" aria-hidden />
           </a>
           <a
-            href={SOCIAL_LINKS.twitter}
+            href={SOCIAL_LINKS.instagram}
             className="text-slate-500 transition-all hover:text-white"
-            aria-label="Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
           >
-            <i className="fab fa-twitter" aria-hidden />
+            <i className="fab fa-instagram" aria-hidden />
           </a>
           <a
             href={SOCIAL_LINKS.github}
             className="text-slate-500 transition-all hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
           >
             <i className="fab fa-github" aria-hidden />

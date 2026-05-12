@@ -86,13 +86,17 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
               <i className="fab fa-youtube" aria-hidden />
               <span className="sr-only">YouTube</span>
             </a>
-            <a href={SOCIAL_LINKS.linkedin}>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin" aria-hidden />
               <span className="sr-only">LinkedIn</span>
             </a>
-            <a href={SOCIAL_LINKS.twitter}>
-              <i className="fab fa-twitter" aria-hidden />
-              <span className="sr-only">Twitter</span>
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-instagram" aria-hidden />
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github" aria-hidden />
+              <span className="sr-only">GitHub</span>
             </a>
           </div>
         </div>
