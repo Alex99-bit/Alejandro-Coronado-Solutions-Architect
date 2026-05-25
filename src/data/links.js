@@ -18,10 +18,11 @@ export const PARTNER_LINKS = {
 
 /** Reemplaza con IDs reales cuando tengas los embeds definitivos */
 export const YOUTUBE_EMBEDS = {
-  featured: ['RJAHCuhLtEs?si=F1rgkjpjwW97AAlW', 'lRmVLaLLc8M?si=qppTgPpSKD3zANLa&amp'],
+  featured: ['RJAHCuhLtEs?si=F1rgkjpjwW97AAlW', 'lRmVLaLLc8M?si=qppTgPpSKD3zANLa&amp', '_GYvoiYQsE4?si=TEi2dmwxjUgopgfL'],
   shorts: [
     'fqoGxiQr-9A?si=r5t80Pus7fTtCosK',
     '-3k_-2BIqgM?si=swuArfTLjd-ffp74',
     'BKxv67TsWaY?si=rajLtYSrW7fuTljg',
+    'ah0QGbGxAdU?si=GRB3JOnnnehbKAWm',
   ],
 }

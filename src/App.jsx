@@ -1,8 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import { useEffect, useRef, useState, Suspense, lazy } from 'react'
 
-import { AuroraBackground } from './components/AuroraBackground.jsx'
+const AuroraBackground = lazy(() => import('./components/AuroraBackground.jsx').then(m => ({ default: m.AuroraBackground })))
 import { ConsultoriaSection } from './components/ConsultoriaSection.jsx'
 import { Hero } from './components/Hero.jsx'
 import { Navigation } from './components/Navigation.jsx'
@@ -11,7 +9,7 @@ import { ProjectsSection } from './components/ProjectsSection.jsx'
 import { SiteFooter } from './components/SiteFooter.jsx'
 import { StatsSection } from './components/StatsSection.jsx'
 import { Toast } from './components/Toast.jsx'
-import { YoutubeSection } from './components/YoutubeSection.jsx'
+const YoutubeSection = lazy(() => import('./components/YoutubeSection.jsx').then(m => ({ default: m.YoutubeSection })))
 import { useNavScrollShadow } from './hooks/useNavScrollShadow.js'
 
 export default function App() {
@@ -21,12 +19,28 @@ export default function App() {
   const elevated = useNavScrollShadow(50)
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      mirror: true,
-      offset: 100,
-    })
+    let active = true
+
+    ;(async () => {
+      try {
+        const AOS = (await import('aos')).default
+        await import('aos/dist/aos.css')
+        if (!active) return
+        AOS.init({
+          duration: 800,
+          once: false,
+          mirror: true,
+          offset: 100,
+        })
+      } catch (e) {
+        // fail gracefully if AOS can't be loaded
+        console.warn('AOS failed to load:', e)
+      }
+    })()
+
+    return () => {
+      active = false
+    }
   }, [])
 
   useEffect(() => {
@@ -62,7 +76,9 @@ export default function App() {
         Saltar al contenido
       </a>
 
-      <AuroraBackground />
+      <Suspense fallback={null}>
+        <AuroraBackground />
+      </Suspense>
 
       <Navigation elevated={elevated} menuOpen={menuOpen} onToggleMenu={toggleMenu} />
 
@@ -71,7 +87,9 @@ export default function App() {
         <ProfessionalProfile />
         <StatsSection />
         <ProjectsSection />
-        <YoutubeSection />
+        <Suspense fallback={null}>
+          <YoutubeSection />
+        </Suspense>
         <ConsultoriaSection onSubmitSuccess={showSubmissionToast} />
       </main>
 

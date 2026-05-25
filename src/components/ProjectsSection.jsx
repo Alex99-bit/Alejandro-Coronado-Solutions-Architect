@@ -66,12 +66,12 @@ export function ProjectsSection() {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                <img src="/DishQ/1.jpg" alt="DishQ screenshot 1" className="rounded-lg object-cover w-full h-40" />
-                <img src="/DishQ/2.jpg" alt="DishQ screenshot 2" className="rounded-lg object-cover w-full h-40" />
-                <img src="/DishQ/3.jpg" alt="DishQ screenshot 3" className="rounded-lg object-cover w-full h-40" />
-                <img src="/DishQ/4.jpg" alt="DishQ screenshot 4" className="rounded-lg object-cover w-full h-40" />
-                <img src="/DishQ/5.jpg" alt="DishQ screenshot 5" className="rounded-lg object-cover w-full h-40" />
-                <img src="/DishQ/6.jpg" alt="DishQ screenshot 6" className="rounded-lg object-cover w-full h-40" />
+                <img src="/DishQ/1.jpg" alt="DishQ screenshot 1" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/2.jpg" alt="DishQ screenshot 2" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/3.jpg" alt="DishQ screenshot 3" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/4.jpg" alt="DishQ screenshot 4" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/5.jpg" alt="DishQ screenshot 5" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/6.jpg" alt="DishQ screenshot 6" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
               </div>
 
               <p className="mt-4 text-slate-400">

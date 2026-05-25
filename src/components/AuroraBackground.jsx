@@ -71,6 +71,15 @@ export function AuroraBackground() {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
+    // Honor prefers-reduced-motion and avoid heavy animation on small screens
+    try {
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (prefersReduced) return
+      if (window.innerWidth <= 640) return
+    } catch (e) {
+      // ignore
+    }
+
     let rafId = null
     let lastTime = performance.now()
 
