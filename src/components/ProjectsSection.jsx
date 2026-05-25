@@ -56,6 +56,15 @@ export function ProjectsSection() {
                 <p className="text-slate-400">
                   Indie games published on itch.io, combining narrative, mechanics and cross-platform development.
                 </p>
+                <a
+                  href="https://alexco99.itch.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 font-bold text-blue-400 hover:text-blue-300"
+                >
+                  View Itch.io{' '}
+                  <i className="fas fa-arrow-right transition-transform" aria-hidden />
+                </a>
               </div>
             </div>
 
@@ -87,15 +96,6 @@ export function ProjectsSection() {
                 <Tag>Games</Tag>
                 <Tag>UX</Tag>
               </div>
-              <a
-                href="https://alexco99.itch.io/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 font-bold text-blue-400 group/btn hover:text-blue-300"
-              >
-                View Itch.io{' '}
-                <i className="fas fa-arrow-right transition-transform group-hover/btn:translate-x-2" aria-hidden />
-              </a>
             </div>
           </article>
 

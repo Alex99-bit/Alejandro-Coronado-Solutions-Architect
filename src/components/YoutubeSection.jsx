@@ -1,13 +1,44 @@
 import { SOCIAL_LINKS, YOUTUBE_EMBEDS } from '../data/links.js'
 
+function extractYouTubeId(input) {
+  if (!input) return ''
+  // If full URL, try to extract ID from common patterns
+  try {
+    // If it's a plain ID with query params, drop them
+    if (!input.includes('://')) {
+      return input.split('?')[0]
+    }
+
+    const url = new URL(input)
+    // Examples: https://youtu.be/ID, https://www.youtube.com/watch?v=ID, /shorts/ID
+    if (url.hostname.includes('youtu.be')) {
+      return url.pathname.replace('/', '').split('?')[0]
+    }
+
+    const path = url.pathname
+    if (path.startsWith('/shorts/')) {
+      return path.split('/shorts/')[1].split('?')[0]
+    }
+    if (path === '/watch') {
+      return url.searchParams.get('v') || ''
+    }
+
+    // fallback: last path segment
+    const parts = path.split('/').filter(Boolean)
+    return (parts.length ? parts[parts.length - 1] : '').split('?')[0]
+  } catch {
+    return input.split('?')[0]
+  }
+}
+
 const featuredVideos = [
   {
-    id: YOUTUBE_EMBEDS.featured[0],
+    id: extractYouTubeId(YOUTUBE_EMBEDS.featured[0]),
     title: 'Founder Mindset for Developers',
     meta: 'Masterclass • 6 min',
   },
   {
-    id: YOUTUBE_EMBEDS.featured[1],
+    id: extractYouTubeId(YOUTUBE_EMBEDS.featured[1]),
     title: 'The $1,000 Mistake',
     meta: 'Masterclass • 12 min',
   },
@@ -69,16 +100,16 @@ export function YoutubeSection() {
         </div>
 
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-          {YOUTUBE_EMBEDS.shorts.map((id, index) => (
+          {YOUTUBE_EMBEDS.shorts.map((rawId, index) => (
             <div
-              key={`${id}-${index}`}
+              key={`${rawId}-${index}`}
               className="aspect-short overflow-hidden rounded-2xl glass-card"
               data-aos="fade-up"
               data-aos-delay={100 + index * 100}
             >
               <iframe
                 className="h-full w-full"
-                src={`https://www.youtube.com/embed/${id}`}
+                src={`https://www.youtube.com/embed/${extractYouTubeId(rawId)}`}
                 title={`Short ${index + 1}`}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
