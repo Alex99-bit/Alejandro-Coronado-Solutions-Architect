@@ -4,10 +4,10 @@ export function ProjectsSection() {
       <div className="container mx-auto px-6">
         <div className="mb-20 max-w-3xl" data-aos="fade-right">
           <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-            Featured <span className="gradient-text">Projects</span>
+            Selected <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-xl leading-relaxed text-slate-400">
-            Where technology meets commercial viability.
+            Selected projects showcasing architecture, engineering, and product delivery.
           </p>
         </div>
 
@@ -59,12 +59,32 @@ export function ProjectsSection() {
               </div>
             </div>
 
+            <div className="mt-10 rounded-[1.5rem] bg-slate-950/60 p-8">
+              <h3 className="mb-4 text-3xl font-bold text-white">DishQ — Cloud ERP for Restaurants</h3>
+              <p className="text-slate-300 mb-6">
+                DishQ is a personal project: a cloud-based ERP tailored for restaurants. It includes dynamic shopping lists, inventory control, cash-closing workflows, cash-flow tracking, and role-based access (owners, managers, employees, guests). The project demonstrates end-to-end architecture, integrations and operational tooling.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <img src="/DishQ/1.jpg" alt="DishQ screenshot 1" className="rounded-lg object-cover w-full h-40" />
+                <img src="/DishQ/2.jpg" alt="DishQ screenshot 2" className="rounded-lg object-cover w-full h-40" />
+                <img src="/DishQ/3.jpg" alt="DishQ screenshot 3" className="rounded-lg object-cover w-full h-40" />
+                <img src="/DishQ/4.jpg" alt="DishQ screenshot 4" className="rounded-lg object-cover w-full h-40" />
+                <img src="/DishQ/5.jpg" alt="DishQ screenshot 5" className="rounded-lg object-cover w-full h-40" />
+                <img src="/DishQ/6.jpg" alt="DishQ screenshot 6" className="rounded-lg object-cover w-full h-40" />
+              </div>
+
+              <p className="mt-4 text-slate-400">
+                Role: Full-stack design &amp; architecture. Tech: Cloud hosting, relational DBs, backend APIs, frontend UX, RBAC, and CI/CD automation.
+              </p>
+            </div>
+
             <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
               <div className="flex gap-3 flex-wrap">
                 <Tag>SaaS</Tag>
-                <Tag>Movilidad</Tag>
-                <Tag>Plataforma</Tag>
-                <Tag>Videojuegos</Tag>
+                <Tag>Mobility</Tag>
+                <Tag>Platform</Tag>
+                <Tag>Games</Tag>
                 <Tag>UX</Tag>
               </div>
               <a

@@ -18,7 +18,7 @@ export function ProfessionalProfile() {
             Professional Profile
           </p>
           <h2 id="about-heading" className="mb-6 text-4xl font-bold md:text-5xl">
-            Engineer, Founder, Solutions Architect &amp; <span className="gradient-text">Technical Sales</span>
+            Senior Software Engineer &amp; <span className="gradient-text">Solutions Architect</span>
           </h2>
           <p className={sectionLead}>
             This portfolio presents Alex Coronado as a software developer, solutions architect, and technical sales professional with a founder mindset: code is the tool and architecture the medium to build impact-driven solutions.
@@ -65,7 +65,7 @@ export function ProfessionalProfile() {
               </a>
 
               <p className="mt-3 text-sm text-slate-400">
-                If you're a recruiter: available for development roles. Download my CV or review my public LinkedIn, GitHub and Instagram.
+                Open to senior roles: Senior Developer, Support Engineer, Solutions Architect. Download my CV or review my public LinkedIn, GitHub and Instagram.
               </p>
             </div>
         </header>
