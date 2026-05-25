@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from '../data/links.js'
+import { SOCIAL_LINKS, CONTACT_LINKS } from '../data/links.js'
 
 const desktopLink =
   'text-sm font-semibold uppercase tracking-widest transition-colors hover:text-blue-400'
@@ -31,6 +31,12 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
             </a>
             <a href="#content" className={desktopLink}>
               Content
+            </a>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className={desktopLink}>
+              LinkedIn
+            </a>
+            <a href={CONTACT_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className={desktopLink}>
+              WhatsApp
             </a>
             <a
               href="#consulting"
@@ -90,9 +96,17 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
               <i className="fab fa-linkedin" aria-hidden />
               <span className="sr-only">LinkedIn</span>
             </a>
+            <a href={CONTACT_LINKS.whatsapp} target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-whatsapp" aria-hidden />
+              <span className="sr-only">WhatsApp</span>
+            </a>
             <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram" aria-hidden />
               <span className="sr-only">Instagram</span>
+            </a>
+            <a href={CONTACT_LINKS.email} target="_blank" rel="noopener noreferrer">
+              <i className="fa fa-envelope" aria-hidden />
+              <span className="sr-only">Email</span>
             </a>
             <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github" aria-hidden />

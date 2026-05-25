@@ -1,4 +1,4 @@
-import { CONTACT_LINKS } from "../data/links";
+import { CONTACT_LINKS, SOCIAL_LINKS } from "../data/links";
 
 const heroImg = new URL("../assets/Alex Coronado.jpeg", import.meta.url).href;
 
@@ -27,19 +27,41 @@ export function Hero() {
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
               I design and build cloud-native platforms, web applications and scalable systems. Seeking senior roles (Senior Developer, Support Engineer, Solutions Architect) where I can contribute architecture, technical leadership and hands-on delivery.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
+            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
               <a
                 href={CONTACT_LINKS.resume}
-                download="Carlos-Alejandro-Coronado-Obregon-CV.pdf"
+                download="Carlos Alejandro Coronado Obregón - CV.pdf"
                 className="btn-fancy rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-5 text-lg font-bold shadow-lg shadow-blue-500/20"
               >
-                View CV
+                Download CV
               </a>
+
               <a
-                href="#consulting"
-                className="flex items-center gap-3 rounded-2xl border border-slate-700 px-10 py-5 text-lg font-bold transition-all hover:bg-slate-800"
+                href={CONTACT_LINKS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-2xl border border-slate-700 px-8 py-4 text-lg font-bold transition-all hover:bg-slate-800"
               >
-                Contact
+                <i className="fab fa-whatsapp" aria-hidden />
+                WhatsApp
+              </a>
+
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-2xl border border-slate-700 px-8 py-4 text-lg font-bold transition-all hover:bg-slate-800"
+              >
+                <i className="fab fa-linkedin" aria-hidden />
+                LinkedIn
+              </a>
+
+              <a
+                href={CONTACT_LINKS.email}
+                className="flex items-center gap-3 rounded-2xl border border-slate-700 px-8 py-4 text-lg font-bold transition-all hover:bg-slate-800"
+              >
+                <i className="fa fa-envelope" aria-hidden />
+                Email
               </a>
             </div>
           </div>

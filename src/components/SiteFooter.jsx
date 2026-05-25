@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from '../data/links.js'
+import { SOCIAL_LINKS, CONTACT_LINKS } from '../data/links.js'
 
 const year = new Date().getFullYear()
 
@@ -29,6 +29,15 @@ export function SiteFooter() {
             <i className="fab fa-linkedin-in" aria-hidden />
           </a>
           <a
+            href={CONTACT_LINKS.whatsapp}
+            className="text-slate-500 transition-all hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+            <i className="fab fa-whatsapp" aria-hidden />
+          </a>
+          <a
             href={SOCIAL_LINKS.instagram}
             className="text-slate-500 transition-all hover:text-white"
             target="_blank"
@@ -36,6 +45,13 @@ export function SiteFooter() {
             aria-label="Instagram"
           >
             <i className="fab fa-instagram" aria-hidden />
+          </a>
+          <a
+            href={CONTACT_LINKS.email}
+            className="text-slate-500 transition-all hover:text-white"
+            aria-label="Email"
+          >
+            <i className="fa fa-envelope" aria-hidden />
           </a>
           <a
             href={SOCIAL_LINKS.github}
