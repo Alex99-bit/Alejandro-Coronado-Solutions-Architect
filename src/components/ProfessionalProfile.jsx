@@ -26,8 +26,7 @@ export function ProfessionalProfile() {
             <div className="mt-6 flex flex-col sm:flex-row items-start gap-4">
               <a
                 href={CONTACT_LINKS.resume}
-                target="_blank"
-                rel="noreferrer"
+                download="Carlos-Alejandro-Coronado-Obregon-CV.pdf"
                 className="inline-flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-white bg-slate-800 border border-white/5 hover:bg-slate-900"
               >
                 <i className="fas fa-file-download" aria-hidden />

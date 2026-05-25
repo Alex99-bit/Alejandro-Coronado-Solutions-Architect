@@ -30,14 +30,13 @@ export function Hero() {
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
               <a
                 href={CONTACT_LINKS.resume}
-                target="_blank"
-                rel="noreferrer"
+                download="Carlos-Alejandro-Coronado-Obregon-CV.pdf"
                 className="btn-fancy rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-5 text-lg font-bold shadow-lg shadow-blue-500/20"
               >
                 View CV
               </a>
               <a
-                href={CONTACT_LINKS.email}
+                href="#consulting"
                 className="flex items-center gap-3 rounded-2xl border border-slate-700 px-10 py-5 text-lg font-bold transition-all hover:bg-slate-800"
               >
                 Contact
