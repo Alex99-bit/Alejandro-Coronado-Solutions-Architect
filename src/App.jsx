@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, Suspense, lazy } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 const AuroraBackground = lazy(() => import('./components/AuroraBackground.jsx').then(m => ({ default: m.AuroraBackground })))
 import { ConsultoriaSection } from './components/ConsultoriaSection.jsx'
@@ -95,6 +96,7 @@ export default function App() {
 
       <SiteFooter />
       <Toast visible={toastVisible} />
+      <Analytics />
     </>
   )
 }
