@@ -9,7 +9,12 @@ GitHub: https://github.com/Alex99-bit
 /* SITE */
 Primary URL: https://alejandro-coronado-solutions-architect.vercel.app/
 Spanish URL: https://alejandro-coronado-solutions-architect.vercel.app/es/
+Spanish Solutions Architect URL: https://alejandro-coronado-solutions-architect.vercel.app/arquitecto-de-soluciones-ingeniero-software/
 Software Engineer URL: https://alejandro-coronado-solutions-architect.vercel.app/software-engineer-solutions-architect/
 AI Specialist URL: https://alejandro-coronado-solutions-architect.vercel.app/ai-specialist-solutions-engineer/
+Technical Impact URL: https://alejandro-coronado-solutions-architect.vercel.app/technical-impact-case-studies/
+CTO Leadership URL: https://alejandro-coronado-solutions-architect.vercel.app/cto-technical-leadership/
+Hire URL: https://alejandro-coronado-solutions-architect.vercel.app/hire-senior-software-engineer-ai-solutions-architect/
+Recruiter Sitemap URL: https://alejandro-coronado-solutions-architect.vercel.app/recruiter-seo-sitemap/
 Focus: enterprise software engineering, solutions architecture, AI agents, backend systems, API architecture, XR simulation
 Language: English, Spanish

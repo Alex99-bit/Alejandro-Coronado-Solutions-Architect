@@ -73,8 +73,23 @@ export function SiteFooter() {
           <a className="hover:text-white" href="/ai-specialist-solutions-engineer/">
             AI Specialist
           </a>
+          <a className="hover:text-white" href="/technical-impact-case-studies/">
+            Technical Impact
+          </a>
+          <a className="hover:text-white" href="/cto-technical-leadership/">
+            CTO Leadership
+          </a>
+          <a className="hover:text-white" href="/hire-senior-software-engineer-ai-solutions-architect/">
+            Hire Alejandro
+          </a>
           <a className="hover:text-white" href="/es/">
             Ingeniero de Software
+          </a>
+          <a className="hover:text-white" href="/arquitecto-de-soluciones-ingeniero-software/">
+            Arquitecto de Soluciones
+          </a>
+          <a className="hover:text-white" href="/recruiter-seo-sitemap/">
+            Recruiter Sitemap
           </a>
         </div>
         <p className="text-sm text-slate-500">
