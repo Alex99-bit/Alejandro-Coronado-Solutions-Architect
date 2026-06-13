@@ -2,11 +2,12 @@
   "name": "portafolio-personal-alejandro-coronado",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "pnpm@10.14.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "verify:seo": "npm run build && node scripts/verify-seo.mjs",
+    "verify:seo": "pnpm run build && node scripts/verify-seo.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
