@@ -1,0 +1,78 @@
+{
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|webp|avif|svg|ico|pdf)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/es",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/software-engineer-solutions-architect",
+      "destination": "/software-engineer-solutions-architect/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-specialist-solutions-engineer",
+      "destination": "/ai-specialist-solutions-engineer/",
+      "permanent": true
+    },
+    {
+      "source": "/technical-impact-case-studies",
+      "destination": "/technical-impact-case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/cto-technical-leadership",
+      "destination": "/cto-technical-leadership/",
+      "permanent": true
+    },
+    {
+      "source": "/arquitecto-de-soluciones-ingeniero-software",
+      "destination": "/arquitecto-de-soluciones-ingeniero-software/",
+      "permanent": true
+    },
+    {
+      "source": "/hire-senior-software-engineer-ai-solutions-architect",
+      "destination": "/hire-senior-software-engineer-ai-solutions-architect/",
+      "permanent": true
+    },
+    {
+      "source": "/recruiter-seo-sitemap",
+      "destination": "/recruiter-seo-sitemap/",
+      "permanent": true
+    }
+  ]
+}

@@ -1,90 +1,131 @@
 /**
- * Helper SEO + JSON-LD templates
- *
- * Usage:
- * import buildSeo from '../data/seo';
- * const seo = buildSeo({
- *   title: 'Servicios',
- *   description: 'Soluciones a medida para PyMEs...',
- *   pathname: '/servicios',
- *   image: '/assets/og-servicios.png',
- *   keywords: ['software', 'PyMEs', 'XR']
- * });
- *
- * Then use `seo.title`, `seo.metaTags`, `seo.og`, `seo.twitter` and `seo.jsonLd`
- * to render head tags or inject into templates.
+ * Helper SEO + JSON-LD templates.
  */
 
 export function buildSeo({ title, description, pathname = '/', image, keywords = [] } = {}) {
-  const siteTitle = 'Alex Coronado — Software Engineer & Solutions Architect';
-  const pageTitle = title ? `${title} · ${siteTitle}` : siteTitle;
-  const canonical = process.env.VITE_SITE_URL ? new URL(pathname, process.env.VITE_SITE_URL).toString() : '__SITE_CANONICAL__';
-  const ogImage = image || 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1200&h=630&fit=crop&q=80';
+  const siteTitle = 'Carlos Alejandro Coronado Obregon | Senior Software Engineer & AI Solutions Architect';
+  const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://alejandro-coronado-solutions-architect.vercel.app';
+  const canonical = new URL(pathname, siteUrl).toString();
+  const ogImage = image || new URL('/og-image.jpg', siteUrl).toString();
   const defaultKeywords = [
-    'solutions architect',
-    'enterprise software',
-    'B2B SaaS',
-    'technical sales',
-    'digital transformation',
-    'XR training',
+    'Alejandro Coronado',
+    'Carlos Alejandro Coronado Obregon',
+    'senior software engineer',
     'software engineer',
-    'scalable architecture'
+    'ingeniero de software',
+    'solutions architect',
+    'arquitecto de soluciones',
+    'AI specialist',
+    'especialista en IA',
+    'AI solutions engineer',
+    'CTO',
+    'backend engineer',
+    'AI agents',
+    'LLM orchestration',
+    'enterprise software',
+    'backend architecture',
+    'Java',
+    '.NET',
+    'Node.js',
+    'XR training',
+    'Unity',
+    'Unreal Engine',
+    'scalable architecture',
   ];
   const finalKeywords = Array.isArray(keywords) && keywords.length ? keywords : defaultKeywords;
 
   const jsonLdPerson = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Alex Coronado",
-    "url": canonical,
-    "image": ogImage,
-    "jobTitle": "Software Engineer, Solutions Architect & Technical Sales",
-    "description": description || "I build scalable B2B SaaS platforms, XR training experiences, and enterprise digital products. I collaborate with gamespiration and Fyware on technical delivery when appropriate.",
-    "affiliation": [
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${canonical}#person`,
+    name: 'Carlos Alejandro Coronado Obregon',
+    alternateName: ['Carlos Alejandro Coronado Obregon', 'Alex Coronado', 'Alejandro Coronado'],
+    url: canonical,
+    image: ogImage,
+    jobTitle: 'Senior Software Engineer, Solutions Architect & AI Solutions Engineer',
+    description: description || 'Bilingual software engineer, ingeniero de software, AI specialist and solutions architect focused on AI agent infrastructure, enterprise backends, API architecture and high-performance immersive systems.',
+    knowsLanguage: ['en', 'es'],
+    hasOccupation: [
       {
-        "@type": "Organization",
-        "name": "gamespiration",
-        "description": "Collaboration on app and platform development and 2D/3D asset creation with Alex Coronado."
+        '@type': 'Occupation',
+        name: 'Software Engineer',
+        occupationalCategory: '15-1252',
       },
       {
-        "@type": "Organization",
-        "name": "Fyware",
-        "description": "Collaboration on XR (VR/AR) solutions for training, upskilling and marketing experiences with Alex Coronado."
-      }
-    ]
+        '@type': 'Occupation',
+        name: 'Solutions Architect',
+      },
+      {
+        '@type': 'Occupation',
+        name: 'AI Specialist',
+      },
+    ],
+    knowsAbout: [
+      'Software engineering',
+      'Ingenieria de software',
+      'Solutions architecture',
+      'Arquitectura de soluciones',
+      'AI specialist',
+      'Especialista en IA',
+      'CTO technical leadership',
+      'AI agents',
+      'LLM orchestration',
+      'Enterprise API architecture',
+      'Java',
+      '.NET',
+      'Node.js',
+      'React',
+      'Vue',
+      'Unity',
+      'Unreal Engine',
+      'XR simulation',
+    ],
+  };
+
+  const jsonLdProfilePage = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${canonical}#profile`,
+    url: canonical,
+    name: 'Carlos Alejandro Coronado Obregon - Software Engineer and Solutions Architect',
+    mainEntity: {
+      '@id': `${canonical}#person`,
+    },
   };
 
   const jsonLdWebSite = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": canonical,
-    "name": pageTitle,
-    "description": description
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${canonical}#website`,
+    url: canonical,
+    name: 'Carlos Alejandro Coronado Obregon',
+    description,
   };
 
   return {
     title: pageTitle,
-    description: description,
+    description,
     canonical,
     metaTags: [
       { name: 'description', content: description || '' },
       { name: 'keywords', content: Array.isArray(finalKeywords) ? finalKeywords.join(', ') : finalKeywords },
-      { name: 'robots', content: 'index,follow,max-image-preview:large' }
+      { name: 'robots', content: 'index,follow,max-image-preview:large' },
     ],
     og: {
-      'og:type': 'website',
+      'og:type': 'profile',
       'og:title': pageTitle,
       'og:description': description || '',
       'og:image': ogImage,
-      'og:url': canonical
+      'og:url': canonical,
     },
     twitter: {
       'twitter:card': 'summary_large_image',
       'twitter:title': pageTitle,
       'twitter:description': description || '',
-      'twitter:image': ogImage
+      'twitter:image': ogImage,
     },
-    jsonLd: [jsonLdPerson, jsonLdWebSite]
+    jsonLd: [jsonLdWebSite, jsonLdProfilePage, jsonLdPerson],
   };
 }
 

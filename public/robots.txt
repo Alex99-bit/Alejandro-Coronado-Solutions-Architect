@@ -1,2 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /Instrucciones.md
+
+Sitemap: https://alejandro-coronado-solutions-architect.vercel.app/sitemap.xml
+Host: alejandro-coronado-solutions-architect.vercel.app

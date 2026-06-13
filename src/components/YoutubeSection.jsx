@@ -2,15 +2,12 @@ import { SOCIAL_LINKS, YOUTUBE_EMBEDS } from '../data/links.js'
 
 function extractYouTubeId(input) {
   if (!input) return ''
-  // If full URL, try to extract ID from common patterns
   try {
-    // If it's a plain ID with query params, drop them
     if (!input.includes('://')) {
       return input.split('?')[0]
     }
 
     const url = new URL(input)
-    // Examples: https://youtu.be/ID, https://www.youtube.com/watch?v=ID, /shorts/ID
     if (url.hostname.includes('youtu.be')) {
       return url.pathname.replace('/', '').split('?')[0]
     }
@@ -23,7 +20,6 @@ function extractYouTubeId(input) {
       return url.searchParams.get('v') || ''
     }
 
-    // fallback: last path segment
     const parts = path.split('/').filter(Boolean)
     return (parts.length ? parts[parts.length - 1] : '').split('?')[0]
   } catch {
@@ -34,13 +30,13 @@ function extractYouTubeId(input) {
 const featuredVideos = [
   {
     id: extractYouTubeId(YOUTUBE_EMBEDS.featured[0]),
-    title: 'Founder Mindset for Developers',
-    meta: 'Masterclass • 6 min',
+    title: 'Engineering Thinking for Product Builders',
+    meta: 'Technical content / 6 min',
   },
   {
     id: extractYouTubeId(YOUTUBE_EMBEDS.featured[1]),
-    title: 'The $1,000 Mistake',
-    meta: 'Masterclass • 12 min',
+    title: 'Lessons from Building Digital Products',
+    meta: 'Technical content / 12 min',
   },
 ]
 
@@ -54,10 +50,10 @@ export function YoutubeSection() {
         >
           <div className="text-center md:text-left">
             <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-              Content that <span className="gradient-text">Inspires</span>
+              Technical <span className="gradient-text">Content</span>
             </h2>
             <p className="text-lg text-slate-400">
-              Lessons on code and business from the trenches.
+              Notes on engineering, product architecture, software delivery, and immersive systems.
             </p>
           </div>
           <a
@@ -67,7 +63,7 @@ export function YoutubeSection() {
             className="btn-fancy flex items-center gap-3 rounded-2xl bg-red-600 px-8 py-4 font-bold"
           >
             <i className="fab fa-youtube text-2xl" aria-hidden />
-            Subscribe
+            YouTube
           </a>
         </div>
 

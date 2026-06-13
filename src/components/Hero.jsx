@@ -1,6 +1,6 @@
 import { CONTACT_LINKS, SOCIAL_LINKS } from "../data/links";
 
-const heroImg = new URL("../assets/Alex Coronado.jpeg", import.meta.url).href;
+const heroImg = "/profile-photo-800.jpg";
 
 export function Hero() {
   return (
@@ -17,20 +17,22 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500" />
               </span>
-              Open to opportunities
+              Carlos Alejandro Coronado Obregon
             </div>
             <h1 className="mb-8 text-6xl leading-[1.1] font-extrabold tracking-tight md:text-8xl">
-              Senior Software Developer, <br />
-              Support Engineer &amp; <br />
+              Software Engineer &amp; <br />
               <span className="gradient-text">Solutions Architect</span>
             </h1>
-            <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              I design and build cloud-native platforms, web applications and scalable systems. Seeking senior roles (Senior Developer, Support Engineer, Solutions Architect) where I can contribute architecture, technical leadership and hands-on delivery.
+            <p className="mx-auto mb-6 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
+              Carlos Alejandro Coronado Obregon is a Senior Software Engineer and Solutions Architect specializing in AI agent infrastructure, enterprise backends, API architecture, and high-performance immersive systems.
+            </p>
+            <p className="mx-auto mb-10 max-w-xl text-sm font-semibold uppercase tracking-widest text-slate-500 lg:mx-0">
+              Software Engineer / Ingeniero de Software / AI Specialist / Arquitecto de Soluciones
             </p>
             <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
               <a
                 href={CONTACT_LINKS.resume}
-                download="Carlos Alejandro Coronado Obregón - CV.pdf"
+                download="Carlos Alejandro Coronado Obregon - CV.pdf"
                 className="btn-fancy rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-5 text-lg font-bold shadow-lg shadow-blue-500/20"
               >
                 Download CV
@@ -72,7 +74,11 @@ export function Hero() {
               <div className="relative overflow-hidden rounded-[3rem] border border-white/10 glass-card">
                 <img
                   src={heroImg}
-                  alt="Alex Coronado"
+                  alt="Carlos Alejandro Coronado Obregon, software engineer and solutions architect"
+                  width="800"
+                  height="1097"
+                  fetchPriority="high"
+                  decoding="async"
                   className="aspect-[4/5] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
                 />
               </div>

@@ -64,10 +64,36 @@ export function SiteFooter() {
           </a>
         </div>
         <p className="text-xs text-slate-400 mb-4">
-          I collaborate with gamespiration and Fyware on development and XR projects.
+          Senior Software Engineer & Solutions Architect focused on AI agents, enterprise backends, and immersive systems.
         </p>
+        <div className="mb-4 flex flex-wrap justify-center gap-4 text-xs font-semibold text-slate-400">
+          <a className="hover:text-white" href="/software-engineer-solutions-architect/">
+            Software Engineer &amp; Solutions Architect
+          </a>
+          <a className="hover:text-white" href="/ai-specialist-solutions-engineer/">
+            AI Specialist
+          </a>
+          <a className="hover:text-white" href="/technical-impact-case-studies/">
+            Technical Impact
+          </a>
+          <a className="hover:text-white" href="/cto-technical-leadership/">
+            CTO Leadership
+          </a>
+          <a className="hover:text-white" href="/hire-senior-software-engineer-ai-solutions-architect/">
+            Hire Alejandro
+          </a>
+          <a className="hover:text-white" href="/es/">
+            Ingeniero de Software
+          </a>
+          <a className="hover:text-white" href="/arquitecto-de-soluciones-ingeniero-software/">
+            Arquitecto de Soluciones
+          </a>
+          <a className="hover:text-white" href="/recruiter-seo-sitemap/">
+            Recruiter Sitemap
+          </a>
+        </div>
         <p className="text-sm text-slate-500">
-          © {year} Alex Coronado Brand. Built for tomorrow.
+          Copyright {year} Carlos Alejandro Coronado Obregon. Built for engineering teams.
         </p>
       </div>
     </footer>

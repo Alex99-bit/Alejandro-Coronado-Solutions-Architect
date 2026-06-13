@@ -21,7 +21,10 @@ export function ProfessionalProfile() {
             Senior Software Engineer &amp; <span className="gradient-text">Solutions Architect</span>
           </h2>
           <p className={sectionLead}>
-            This portfolio presents Alex Coronado as a software developer, solutions architect, and technical sales professional with a founder mindset: code is the tool and architecture the medium to build impact-driven solutions.
+            I build proprietary tools, optimized systems, and high-performance software platforms that translate complex business requirements into precise technical specifications. I am a bilingual software engineer, ingeniero de software, AI specialist, and arquitecto de soluciones with a background spanning Java, .NET, Node.js, SQL, NoSQL, distributed systems, and immersive simulation.
+          </p>
+          <p className="mt-4 text-base font-semibold text-slate-300">
+            Ingeniero de software y arquitecto de soluciones especializado en IA, backends empresariales y automatizacion.
           </p>
             <div className="mt-6 flex flex-col sm:flex-row items-start gap-4">
               <a
@@ -64,7 +67,7 @@ export function ProfessionalProfile() {
               </a>
 
               <p className="mt-3 text-sm text-slate-400">
-                Open to senior roles: Senior Developer, Support Engineer, Solutions Architect. Download my CV or review my public LinkedIn, GitHub and Instagram.
+                Open to senior engineering roles focused on backend architecture, AI systems, platform engineering, XR simulation, and technical leadership.
               </p>
             </div>
         </header>
@@ -72,63 +75,52 @@ export function ProfessionalProfile() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="space-y-10 lg:col-span-7">
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-up">
-              <h3 className={subsectionTitle}>Full-Stack Development &amp; Architecture</h3>
+              <h3 className={subsectionTitle}>Software &amp; Systems Architecture</h3>
               <p className={`${sectionLead} text-base md:text-lg`}>
-                I specialize in modern full-stack development with a workflow optimized for efficiency and scalability. My preferred architecture combines the robustness of Laravel and PHP in the backend with the agility of React and Inertia.js on the frontend, supported by clean interfaces built with Tailwind CSS.
+                API design, enterprise integrations, SQL and NoSQL databases, decoupled architectures, workflow automation, interoperability, and CTO-level technical specifications for reliable delivery.
               </p>
             </article>
 
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-up" data-aos-delay="50">
-              <h3 className={subsectionTitle}>3D Development &amp; Game Design</h3>
+              <h3 className={subsectionTitle}>AI Engineering</h3>
               <p className={`${sectionLead} text-base md:text-lg`}>
-                My creative process extends to building virtual worlds and XR experiences. I master leading engines such as Unity and Unreal Engine, complementing technical development with a solid 3D modeling workflow using Blender, Maya and Meshroom.
+                LLM orchestration with Gemini, Claude, GPT and DeepSeek, multi-agent systems integration, AI workflow automation, custom agent behavior, and enterprise data connectivity.
               </p>
-              <ul className="list-inside list-disc space-y-3 text-lg text-slate-400 marker:text-blue-400 mt-6">
-                <li>Retopology and mesh optimization.</li>
-                <li>Character animation and PBR texturing.</li>
-                <li>Photogrammetry for realistic environments.</li>
-              </ul>
             </article>
 
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-up" data-aos-delay="100">
-              <h3 className={subsectionTitle}>Selected Achievements</h3>
+              <h3 className={subsectionTitle}>Backend &amp; Full-Stack Development</h3>
               <ul className="list-inside list-disc space-y-3 text-lg text-slate-400 marker:text-blue-400">
-                <li>
-                  Closed deals exceeding <strong className="text-slate-200">$100,000 MXN</strong> (~<strong className="text-slate-200">$5,500 USD</strong>) on bespoke technology projects and solutions.
-                </li>
-                <li>
-                  <strong className="text-slate-200">NASA Space Apps Challenge</strong>: first place.
-                </li>
-                <li>
-                  Experience in <strong className="text-slate-200">technical sales</strong> and commercial negotiations based on <strong className="text-slate-200">SPIN Selling</strong>.
-                </li>
+                <li>C# .NET, Java, Node.js, Python, PHP Laravel and C++.</li>
+                <li>React and Vue for operational interfaces and web applications.</li>
+                <li>Java positioned for corporate backend environments with approximately 80% proficiency.</li>
               </ul>
             </article>
           </div>
 
           <aside className="space-y-10 lg:col-span-5">
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-left">
-              <h3 className={subsectionTitle}>Hardware Ecosystem &amp; Content Creation</h3>
+              <h3 className={subsectionTitle}>Immersive Technologies &amp; Graphics</h3>
               <p className={`${sectionLead} text-base md:text-lg`}>
-                I operate a high-performance ecosystem that supports both development and personal branding from Developer to Founder.
+                Unity, Unreal Engine, C++, XR simulation, VR training systems, real-time interaction design, performance optimization, and 3D asset interoperability.
               </p>
               <ul className="space-y-4 text-lg text-slate-400 mt-6">
                 <li className="border-l-2 border-blue-500/40 py-1 pl-4">
-                  Workstation with Ryzen 7 5800X and RTX 3070 for smooth rendering and builds.
+                  VR training simulators with direct impact on medical and operational safety.
                 </li>
                 <li className="border-l-2 border-purple-500/40 py-1 pl-4">
-                  Mobile productivity with Galaxy S24 and Tab S10 Plus to manage projects on the move.
+                  Large-scale interactive experiences optimized for Unity and C# runtime constraints.
                 </li>
                 <li className="border-l-2 border-blue-400/40 py-1 pl-4">
-                  Visual production with Osmo Mobile 7p and an autofocus module for high-quality YouTube and TikTok content.
+                  Reverse-engineered 3D format conversion foundations to improve asset interoperability.
                 </li>
               </ul>
             </article>
 
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-left" data-aos-delay="80">
-              <h3 className={subsectionTitle}>Professional Style &amp; Strategy</h3>
+              <h3 className={subsectionTitle}>Technical Leadership</h3>
               <p className={`${sectionLead} text-base md:text-lg`}>
-                My professional style combines technical depth and strategic thinking. I apply SPIN Selling to lead software and extended reality projects, focusing on profitability and innovation from a founder's perspective.
+                I act as a technical bridge between product, business stakeholders, and engineering teams, converting ambiguous requirements into executable architecture, implementation priorities, and measurable delivery outcomes.
               </p>
             </article>
 
@@ -137,7 +129,7 @@ export function ProfessionalProfile() {
               data-aos="fade-left"
               data-aos-delay="140"
             >
-              In summary, I bridge the precision of a software engineer with a founder's strategic vision, moving between complex systems architecture and commercial relationship management.
+              Profile focus: Senior Software Engineer, Solutions Architect, and AI Solutions Engineer with strengths in robust backend systems, AI agent infrastructure, immersive systems, and cross-functional technical leadership.
             </p>
           </aside>
         </div>

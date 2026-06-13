@@ -26,6 +26,9 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
             <a href="#highlights" className={desktopLink}>
               Highlights
             </a>
+            <a href="#experience" className={desktopLink}>
+              Experience
+            </a>
             <a href="#projects" className={desktopLink}>
               Projects
             </a>
@@ -39,10 +42,10 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
               WhatsApp
             </a>
             <a
-              href="#consulting"
+              href="#contact"
               className="btn-fancy rounded-full bg-white px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-black transition-all hover:scale-105 active:scale-95"
             >
-              Let's Talk
+              Recruiter Contact
             </a>
           </div>
 
@@ -74,14 +77,17 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
           <MobileNavLink delay="0.2s" href="#highlights" onNavigate={onToggleMenu}>
             Highlights
           </MobileNavLink>
+          <MobileNavLink delay="0.23s" href="#experience" onNavigate={onToggleMenu}>
+            Experience
+          </MobileNavLink>
           <MobileNavLink delay="0.25s" href="#projects" onNavigate={onToggleMenu}>
             Projects
           </MobileNavLink>
           <MobileNavLink delay="0.3s" href="#content" onNavigate={onToggleMenu}>
             Content
           </MobileNavLink>
-          <MobileNavLink delay="0.4s" href="#consulting" onNavigate={onToggleMenu}>
-            Consulting
+          <MobileNavLink delay="0.4s" href="#contact" onNavigate={onToggleMenu}>
+            Contact
           </MobileNavLink>
 
           <div
