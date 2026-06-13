@@ -1,6 +1,6 @@
 const experiences = [
   {
-    role: 'AI Agent Dev & Full-Stack Engineer',
+    role: 'AI Solutions Engineer & Full-Stack Software Engineer',
     company: 'AIA',
     period: '2026 - Present',
     accent: 'text-cyan-400',
@@ -52,7 +52,7 @@ export function ExperienceSection() {
             Corporate impact through <span className="gradient-text">architecture and execution</span>
           </h2>
           <p className="text-xl leading-relaxed text-slate-400">
-            Experience reframed around technical ownership, system design, AI integration, and measurable engineering outcomes.
+            Experience reframed around technical ownership, system design, AI integration, CTO-facing architecture decisions, and measurable engineering outcomes.
           </p>
         </div>
 

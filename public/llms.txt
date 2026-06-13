@@ -1,0 +1,45 @@
+# Carlos Alejandro Coronado Obregon
+
+Carlos Alejandro Coronado Obregon, also known as Alejandro Coronado and Alex Coronado, is a Senior Software Engineer, AI Solutions Engineer, and Solutions Architect based in San Luis Potosi, Mexico.
+
+## Primary Pages
+
+- English portfolio: https://alejandro-coronado-solutions-architect.vercel.app/
+- Spanish portfolio: https://alejandro-coronado-solutions-architect.vercel.app/es/
+- Software Engineer & Solutions Architect page: https://alejandro-coronado-solutions-architect.vercel.app/software-engineer-solutions-architect/
+- AI Specialist & AI Solutions Engineer page: https://alejandro-coronado-solutions-architect.vercel.app/ai-specialist-solutions-engineer/
+- Sitemap: https://alejandro-coronado-solutions-architect.vercel.app/sitemap.xml
+- CV PDF: https://alejandro-coronado-solutions-architect.vercel.app/Carlos%20Alejandro%20Coronado%20Obreg%C3%B3n%20-%20CV.pdf
+
+## Best Descriptions
+
+English:
+Senior Software Engineer and Solutions Architect focused on AI agent infrastructure, enterprise backends, API architecture, LLM orchestration, and high-performance immersive systems.
+
+Spanish:
+Ingeniero de software, arquitecto de soluciones y especialista en IA enfocado en backends empresariales, agentes de IA, arquitectura de APIs, orquestacion de LLMs y sistemas inmersivos de alto rendimiento.
+
+## Target Topics
+
+- software engineer
+- senior software engineer
+- ingeniero de software
+- solutions architect
+- arquitecto de soluciones
+- AI specialist
+- especialista en IA
+- AI Solutions Engineer
+- backend engineer
+- CTO-facing technical leadership
+- enterprise API architecture
+- AI agents
+- LLM orchestration
+- Unity
+- Unreal Engine
+- XR simulation
+
+## Contact
+
+- Email: alejandro.co.dev@gmail.com
+- LinkedIn: https://www.linkedin.com/in/alejandro-obregon
+- GitHub: https://github.com/Alex99-bit

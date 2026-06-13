@@ -66,6 +66,17 @@ export function SiteFooter() {
         <p className="text-xs text-slate-400 mb-4">
           Senior Software Engineer & Solutions Architect focused on AI agents, enterprise backends, and immersive systems.
         </p>
+        <div className="mb-4 flex flex-wrap justify-center gap-4 text-xs font-semibold text-slate-400">
+          <a className="hover:text-white" href="/software-engineer-solutions-architect/">
+            Software Engineer &amp; Solutions Architect
+          </a>
+          <a className="hover:text-white" href="/ai-specialist-solutions-engineer/">
+            AI Specialist
+          </a>
+          <a className="hover:text-white" href="/es/">
+            Ingeniero de Software
+          </a>
+        </div>
         <p className="text-sm text-slate-500">
           Copyright {year} Carlos Alejandro Coronado Obregon. Built for engineering teams.
         </p>

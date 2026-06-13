@@ -2,6 +2,7 @@ export function StatsSection() {
   return (
     <section className="border-y border-white/5 py-24" id="highlights">
       <div className="container mx-auto px-6">
+        <h2 className="sr-only">Technical SEO highlights for Alejandro Coronado</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12">
           <StatCard
             label="Engineering"
@@ -39,9 +40,9 @@ function StatCard({ label, headline, subtitle, aosDelay }) {
       <p className="mb-2 text-xs font-bold tracking-widest text-slate-500 uppercase">
         {label}
       </p>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight whitespace-normal break-words">
+      <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight whitespace-normal break-words">
         {headline}
-      </h2>
+      </h3>
       <p className="mt-2 text-sm text-slate-400">{subtitle}</p>
     </div>
   )

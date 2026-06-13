@@ -3,14 +3,24 @@
  */
 
 export function buildSeo({ title, description, pathname = '/', image, keywords = [] } = {}) {
-  const siteTitle = 'Alex Coronado - Senior Software Engineer & Solutions Architect';
+  const siteTitle = 'Carlos Alejandro Coronado Obregon | Senior Software Engineer & AI Solutions Architect';
   const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
-  const siteUrl = import.meta.env.VITE_SITE_URL;
-  const canonical = siteUrl ? new URL(pathname, siteUrl).toString() : '__SITE_CANONICAL__';
-  const ogImage = image || 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1200&h=630&fit=crop&q=80';
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://alejandro-coronado-solutions-architect.vercel.app';
+  const canonical = new URL(pathname, siteUrl).toString();
+  const ogImage = image || new URL('/og-image.jpg', siteUrl).toString();
   const defaultKeywords = [
+    'Alejandro Coronado',
+    'Carlos Alejandro Coronado Obregon',
     'senior software engineer',
+    'software engineer',
+    'ingeniero de software',
     'solutions architect',
+    'arquitecto de soluciones',
+    'AI specialist',
+    'especialista en IA',
+    'AI solutions engineer',
+    'CTO',
+    'backend engineer',
     'AI agents',
     'LLM orchestration',
     'enterprise software',
@@ -28,15 +38,37 @@ export function buildSeo({ title, description, pathname = '/', image, keywords =
   const jsonLdPerson = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${canonical}#person`,
     name: 'Carlos Alejandro Coronado Obregon',
-    alternateName: ['Alex Coronado', 'Alejandro Coronado'],
+    alternateName: ['Carlos Alejandro Coronado Obregon', 'Alex Coronado', 'Alejandro Coronado'],
     url: canonical,
     image: ogImage,
     jobTitle: 'Senior Software Engineer, Solutions Architect & AI Solutions Engineer',
-    description: description || 'Senior Software Engineer and Solutions Architect focused on AI agent infrastructure, enterprise backends, API architecture, and high-performance immersive systems.',
+    description: description || 'Bilingual software engineer, ingeniero de software, AI specialist and solutions architect focused on AI agent infrastructure, enterprise backends, API architecture and high-performance immersive systems.',
+    knowsLanguage: ['en', 'es'],
+    hasOccupation: [
+      {
+        '@type': 'Occupation',
+        name: 'Software Engineer',
+        occupationalCategory: '15-1252',
+      },
+      {
+        '@type': 'Occupation',
+        name: 'Solutions Architect',
+      },
+      {
+        '@type': 'Occupation',
+        name: 'AI Specialist',
+      },
+    ],
     knowsAbout: [
       'Software engineering',
+      'Ingenieria de software',
       'Solutions architecture',
+      'Arquitectura de soluciones',
+      'AI specialist',
+      'Especialista en IA',
+      'CTO technical leadership',
       'AI agents',
       'LLM orchestration',
       'Enterprise API architecture',
@@ -51,11 +83,23 @@ export function buildSeo({ title, description, pathname = '/', image, keywords =
     ],
   };
 
+  const jsonLdProfilePage = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${canonical}#profile`,
+    url: canonical,
+    name: 'Carlos Alejandro Coronado Obregon - Software Engineer and Solutions Architect',
+    mainEntity: {
+      '@id': `${canonical}#person`,
+    },
+  };
+
   const jsonLdWebSite = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${canonical}#website`,
     url: canonical,
-    name: pageTitle,
+    name: 'Carlos Alejandro Coronado Obregon',
     description,
   };
 
@@ -69,7 +113,7 @@ export function buildSeo({ title, description, pathname = '/', image, keywords =
       { name: 'robots', content: 'index,follow,max-image-preview:large' },
     ],
     og: {
-      'og:type': 'website',
+      'og:type': 'profile',
       'og:title': pageTitle,
       'og:description': description || '',
       'og:image': ogImage,
@@ -81,7 +125,7 @@ export function buildSeo({ title, description, pathname = '/', image, keywords =
       'twitter:description': description || '',
       'twitter:image': ogImage,
     },
-    jsonLd: [jsonLdPerson, jsonLdWebSite],
+    jsonLd: [jsonLdWebSite, jsonLdProfilePage, jsonLdPerson],
   };
 }
 

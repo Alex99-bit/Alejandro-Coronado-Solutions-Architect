@@ -21,7 +21,10 @@ export function ProfessionalProfile() {
             Senior Software Engineer &amp; <span className="gradient-text">Solutions Architect</span>
           </h2>
           <p className={sectionLead}>
-            I build proprietary tools, optimized systems, and high-performance software platforms that translate complex business requirements into precise technical specifications. My background spans enterprise ecosystems such as Java, .NET, Node.js, SQL and NoSQL, while extending into emerging AI workflows, distributed systems, and immersive simulation.
+            I build proprietary tools, optimized systems, and high-performance software platforms that translate complex business requirements into precise technical specifications. I am a bilingual software engineer, ingeniero de software, AI specialist, and arquitecto de soluciones with a background spanning Java, .NET, Node.js, SQL, NoSQL, distributed systems, and immersive simulation.
+          </p>
+          <p className="mt-4 text-base font-semibold text-slate-300">
+            Ingeniero de software y arquitecto de soluciones especializado en IA, backends empresariales y automatizacion.
           </p>
             <div className="mt-6 flex flex-col sm:flex-row items-start gap-4">
               <a
@@ -74,7 +77,7 @@ export function ProfessionalProfile() {
             <article className="rounded-[2rem] glass-card p-8 md:p-10" data-aos="fade-up">
               <h3 className={subsectionTitle}>Software &amp; Systems Architecture</h3>
               <p className={`${sectionLead} text-base md:text-lg`}>
-                API design, enterprise integrations, SQL and NoSQL databases, decoupled architectures, workflow automation, interoperability, and technical specifications for reliable delivery.
+                API design, enterprise integrations, SQL and NoSQL databases, decoupled architectures, workflow automation, interoperability, and CTO-level technical specifications for reliable delivery.
               </p>
             </article>
 

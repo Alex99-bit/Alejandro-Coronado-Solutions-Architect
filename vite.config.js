@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 const YOUTUBE_PROFILE = 'https://www.youtube.com/@alexcoronado3219'
+const DEFAULT_SITE_URL = 'https://alejandro-coronado-solutions-architect.vercel.app'
 
 /** Sustituir rutas absolutas en index.html cuando exista `VITE_SITE_URL` en .env (ej. https://alexcornado.com). */
 function seoUrlsPlugin(mode) {
@@ -11,7 +12,7 @@ function seoUrlsPlugin(mode) {
     transformIndexHtml(html) {
       const env = loadEnv(mode, process.cwd(), '')
       const trimmed = env.VITE_SITE_URL?.trim()
-      const origin = trimmed ? trimmed.replace(/\/$/, '') : ''
+      const origin = trimmed ? trimmed.replace(/\/$/, '') : DEFAULT_SITE_URL
       const canonical = origin ? `${origin}/` : ''
       let out = html.replaceAll(
         '__PERSON_PAGE_URL__',

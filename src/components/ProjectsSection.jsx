@@ -61,12 +61,12 @@ export function ProjectsSection() {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                <img src="/DishQ/1.jpg" alt="DishQ screenshot 1" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
-                <img src="/DishQ/2.jpg" alt="DishQ screenshot 2" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
-                <img src="/DishQ/3.jpg" alt="DishQ screenshot 3" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
-                <img src="/DishQ/4.jpg" alt="DishQ screenshot 4" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
-                <img src="/DishQ/5.jpg" alt="DishQ screenshot 5" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
-                <img src="/DishQ/6.jpg" alt="DishQ screenshot 6" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/1.jpg" alt="DishQ cloud ERP operations dashboard by Alejandro Coronado" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/2.jpg" alt="DishQ restaurant inventory workflow designed by Alejandro Coronado" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/3.jpg" alt="DishQ purchasing and cash-flow interface for restaurant ERP" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/4.jpg" alt="DishQ role-based access screen for cloud ERP users" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/5.jpg" alt="DishQ backend operations module for restaurant management" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
+                <img src="/DishQ/6.jpg" alt="DishQ cloud ERP reporting view for restaurant operators" className="rounded-lg object-cover w-full h-40" loading="lazy" decoding="async" fetchpriority="low" />
               </div>
 
               <p className="mt-4 text-slate-400">
