@@ -1,6 +1,6 @@
 import { CONTACT_LINKS, SOCIAL_LINKS } from "../data/links";
 
-const heroImg = new URL("../assets/Alex Coronado.jpeg", import.meta.url).href;
+const heroImg = "/profile%20photo.jpg";
 
 export function Hero() {
   return (
@@ -20,12 +20,11 @@ export function Hero() {
               Open to opportunities
             </div>
             <h1 className="mb-8 text-6xl leading-[1.1] font-extrabold tracking-tight md:text-8xl">
-              Senior Software Developer, <br />
-              Support Engineer &amp; <br />
+              Software Engineer &amp; <br />
               <span className="gradient-text">Solutions Architect</span>
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl lg:mx-0">
-              I design and build cloud-native platforms, web applications and scalable systems. Seeking senior roles (Senior Developer, Support Engineer, Solutions Architect) where I can contribute architecture, technical leadership and hands-on delivery.
+              Senior Software Engineer specializing in AI agent infrastructure, enterprise backends, API architecture, and high-performance immersive systems for corporate environments.
             </p>
             <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
               <a

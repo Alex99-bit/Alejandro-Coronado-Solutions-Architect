@@ -4,27 +4,27 @@ export function StatsSection() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12">
           <StatCard
-            label="Experience"
-            headline={<>10<span className="text-blue-500">+</span></>}
-            subtitle="Years in Tech"
+            label="Engineering"
+            headline="AI Agents"
+            subtitle="Enterprise automation"
             aosDelay={100}
           />
           <StatCard
-            label="Business"
-            headline="IT Consultant"
-            subtitle="Founder"
+            label="Backend"
+            headline="Java/.NET"
+            subtitle="Corporate stack"
             aosDelay={200}
           />
           <StatCard
-            label="Community"
-            headline="+400"
-            subtitle="On Instagram"
+            label="XR"
+            headline="Unity/C#"
+            subtitle="Simulation systems"
             aosDelay={300}
           />
           <StatCard
-            label="Reach"
-            headline="Global"
-            subtitle="Digital Impact"
+            label="Awards"
+            headline="3x"
+            subtitle="Competitive recognition"
             aosDelay={400}
           />
         </div>

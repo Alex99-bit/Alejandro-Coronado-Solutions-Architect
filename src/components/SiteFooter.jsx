@@ -64,10 +64,10 @@ export function SiteFooter() {
           </a>
         </div>
         <p className="text-xs text-slate-400 mb-4">
-          I collaborate with gamespiration and Fyware on development and XR projects.
+          Senior Software Engineer & Solutions Architect focused on AI agents, enterprise backends, and immersive systems.
         </p>
         <p className="text-sm text-slate-500">
-          © {year} Alex Coronado Brand. Built for tomorrow.
+          Copyright {year} Carlos Alejandro Coronado Obregon. Built for engineering teams.
         </p>
       </div>
     </footer>

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, Suspense, lazy } from 'react'
 
 const AuroraBackground = lazy(() => import('./components/AuroraBackground.jsx').then(m => ({ default: m.AuroraBackground })))
-import { ConsultoriaSection } from './components/ConsultoriaSection.jsx'
+import { ContactSection } from './components/ContactSection.jsx'
+import { ExperienceSection } from './components/ExperienceSection.jsx'
 import { Hero } from './components/Hero.jsx'
 import { Navigation } from './components/Navigation.jsx'
 import { ProfessionalProfile } from './components/ProfessionalProfile.jsx'
@@ -86,11 +87,12 @@ export default function App() {
         <Hero />
         <ProfessionalProfile />
         <StatsSection />
+        <ExperienceSection />
         <ProjectsSection />
         <Suspense fallback={null}>
           <YoutubeSection />
         </Suspense>
-        <ConsultoriaSection onSubmitSuccess={showSubmissionToast} />
+        <ContactSection onSubmitSuccess={showSubmissionToast} />
       </main>
 
       <SiteFooter />
