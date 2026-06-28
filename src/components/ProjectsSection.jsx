@@ -76,11 +76,11 @@ export function ProjectsSection() {
 
             <div className="mt-10 rounded-[1.5rem] bg-slate-950/60 p-8">
               <span className="mb-4 inline-block rounded-full bg-amber-600 px-4 py-1 text-xs font-bold tracking-widest uppercase">
-                En desarrollo
+                In Development
               </span>
-              <h3 className="mb-6 text-3xl font-bold text-white">LPAV — Plataforma para Agencias de Viajes</h3>
+              <h3 className="mb-6 text-3xl font-bold text-white">LPAV — Travel Agency Platform</h3>
               <p className="text-slate-300 mb-6">
-                Plataforma para agencias de viajes con arquitectura moderna, desarrollo ágil impulsado por agentes inteligentes.
+                Modern travel agency platform built with an agile development approach powered by intelligent agents, featuring scalable architecture and cloud-native infrastructure.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
