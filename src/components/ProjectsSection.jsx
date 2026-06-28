@@ -74,6 +74,32 @@ export function ProjectsSection() {
               </p>
             </div>
 
+            <div className="mt-10 rounded-[1.5rem] bg-slate-950/60 p-8">
+              <span className="mb-4 inline-block rounded-full bg-amber-600 px-4 py-1 text-xs font-bold tracking-widest uppercase">
+                In Development
+              </span>
+              <h3 className="mb-6 text-3xl font-bold text-white">LPAV — Travel Agency Platform</h3>
+              <p className="text-slate-300 mb-6">
+                Modern travel agency platform built with an agile development approach powered by intelligent agents, featuring scalable architecture and cloud-native infrastructure.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="rounded-lg bg-gradient-to-br from-slate-800 to-slate-900 w-full h-40 flex items-center justify-center border border-white/5">
+                  <span className="text-slate-500 text-sm">Screenshot 1</span>
+                </div>
+                <div className="rounded-lg bg-gradient-to-br from-slate-800 to-slate-900 w-full h-40 flex items-center justify-center border border-white/5">
+                  <span className="text-slate-500 text-sm">Screenshot 2</span>
+                </div>
+                <div className="rounded-lg bg-gradient-to-br from-slate-800 to-slate-900 w-full h-40 flex items-center justify-center border border-white/5">
+                  <span className="text-slate-500 text-sm">Screenshot 3</span>
+                </div>
+              </div>
+
+              <p className="mt-4 text-slate-400">
+                Role: full-stack architecture. Tech: TypeScript, Tailwind CSS, Supabase, Vercel, Docker, AI Agent Engineering.
+              </p>
+            </div>
+
             <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
               <div className="flex gap-3 flex-wrap">
                 <Tag>SaaS</Tag>
@@ -81,6 +107,12 @@ export function ProjectsSection() {
                 <Tag>AI Workflows</Tag>
                 <Tag>XR</Tag>
                 <Tag>RBAC</Tag>
+                <Tag>TypeScript</Tag>
+                <Tag>Tailwind</Tag>
+                <Tag>Supabase</Tag>
+                <Tag>Vercel</Tag>
+                <Tag>Docker</Tag>
+                <Tag>AI Agents</Tag>
               </div>
             </div>
           </article>
