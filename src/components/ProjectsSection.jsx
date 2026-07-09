@@ -1,3 +1,5 @@
+import { DashboardSection } from './dashboard/DashboardSection';
+
 export function ProjectsSection() {
   return (
     <section className="py-32" id="projects">
@@ -141,6 +143,8 @@ export function ProjectsSection() {
             />
           </div>
         </div>
+
+        <DashboardSection />
       </div>
     </section>
   )
