@@ -12,6 +12,7 @@ import { ProjectsSection } from './components/ProjectsSection.jsx'
 import { SiteFooter } from './components/SiteFooter.jsx'
 import { StatsSection } from './components/StatsSection.jsx'
 import { Toast } from './components/Toast.jsx'
+const PlaygroundSection = lazy(() => import('./components/playground/PlaygroundSection.jsx').then(m => ({ default: m.PlaygroundSection })))
 const YoutubeSection = lazy(() => import('./components/YoutubeSection.jsx').then(m => ({ default: m.YoutubeSection })))
 import { useNavScrollShadow } from './hooks/useNavScrollShadow.js'
 
@@ -91,6 +92,9 @@ export default function App() {
         <StatsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <Suspense fallback={null}>
+          <PlaygroundSection />
+        </Suspense>
         <AgentSection />
         <Suspense fallback={null}>
           <YoutubeSection />

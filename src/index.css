@@ -311,6 +311,68 @@ html, body, #root {
   .cube-wrapper { width: 90px !important; height: 90px !important; --cube-depth: 44px !important; }
 }
 
+/* Playground: mesh slider custom styling */
+.mesh-slider {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.mesh-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #60a5fa;
+  cursor: pointer;
+  border: 2px solid #020617;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mesh-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.6);
+}
+
+.mesh-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #60a5fa;
+  cursor: pointer;
+  border: 2px solid #020617;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+/* Playground: workflow node hover */
+.workflow-node {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.workflow-node:hover {
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.5);
+}
+
+/* Playground: palette item drag cursor */
+.workflow-palette-item {
+  cursor: grab;
+}
+
+.workflow-palette-item:active {
+  cursor: grabbing;
+}
+
+/* Playground: canvas area grid pattern */
+.workflow-canvas-area {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 @media (orientation: landscape) and (max-width: 812px) {
   .glass-card { max-width: 92vw; }
 }

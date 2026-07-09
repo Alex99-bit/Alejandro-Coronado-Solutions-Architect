@@ -19,7 +19,7 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
             ALEX<span className="gradient-text">CORONADO</span>
           </a>
 
-          <div className="hidden items-center gap-10 md:flex">
+          <div className="hidden items-center gap-4 lg:gap-6 xl:gap-10 md:flex">
             <a href="#about" className={desktopLink}>
               About
             </a>
@@ -32,13 +32,16 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
             <a href="#projects" className={desktopLink}>
               Projects
             </a>
+            <a href="#playground" className={desktopLink}>
+              Playground
+            </a>
             <a href="#content" className={desktopLink}>
               Content
             </a>
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className={desktopLink}>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className={`${desktopLink} hidden lg:inline-flex`}>
               LinkedIn
             </a>
-            <a href={CONTACT_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className={desktopLink}>
+            <a href={CONTACT_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className={`${desktopLink} hidden lg:inline-flex`}>
               WhatsApp
             </a>
             <a
@@ -82,6 +85,9 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
           </MobileNavLink>
           <MobileNavLink delay="0.25s" href="#projects" onNavigate={onToggleMenu}>
             Projects
+          </MobileNavLink>
+          <MobileNavLink delay="0.27s" href="#playground" onNavigate={onToggleMenu}>
+            Playground
           </MobileNavLink>
           <MobileNavLink delay="0.3s" href="#content" onNavigate={onToggleMenu}>
             Content
