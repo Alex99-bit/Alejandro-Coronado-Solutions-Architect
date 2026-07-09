@@ -84,5 +84,3 @@ export const dashboardData: DashboardData = {
   ],
   lastUpdated: '2026-07-08',
 };
-
-export const getDashboardData = (): DashboardData => dashboardData;

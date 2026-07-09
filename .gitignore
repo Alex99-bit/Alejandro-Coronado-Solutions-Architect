@@ -25,3 +25,12 @@ dist-ssr
 *.sw?
 .vercel
 .env*
+
+# Internal agent prompts & design docs
+.agent.md
+*.agent.md
+asistente de contacto agent.md
+dashboard analiticas agent.md
+marketing-seo-specialist.md
+playground interactivo.md
+docs/Instrucciones.md
