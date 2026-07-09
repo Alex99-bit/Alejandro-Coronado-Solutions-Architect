@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { chatApiPlugin } from './vite-plugin-chat-api.js'
 
 const YOUTUBE_PROFILE = 'https://www.youtube.com/@alexcoronado3219'
 const DEFAULT_SITE_URL = 'https://alejandro-coronado-solutions-architect.vercel.app'
@@ -41,5 +42,5 @@ function seoUrlsPlugin(mode) {
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), tailwindcss(), seoUrlsPlugin(mode)],
+  plugins: [react(), tailwindcss(), seoUrlsPlugin(mode), chatApiPlugin(mode)],
 }))
