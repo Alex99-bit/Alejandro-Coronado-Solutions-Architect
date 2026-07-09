@@ -1,6 +1,27 @@
+import { useState } from 'react'
 import { CONTACT_LINKS } from '../data/links.js'
 
-export function ContactSection() {
+export function ContactSection({ onSubmitSuccess }) {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+
+  function handleChange(e) {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return
+
+    const subject = encodeURIComponent(`Contact from ${formData.name}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )
+    window.open(`mailto:alejandro.co.dev@gmail.com?subject=${subject}&body=${body}`, '_blank')
+
+    setFormData({ name: '', email: '', message: '' })
+    onSubmitSuccess?.()
+  }
+
   return (
     <section className="py-32" id="contact">
       <div className="container mx-auto px-6 text-center">
@@ -18,12 +39,48 @@ export function ContactSection() {
             Available for senior engineering, solutions architecture, AI engineering, and XR systems roles with global teams.
           </p>
 
-          <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-slate-950/70 p-8 text-center">
+          <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-slate-950/70 p-8 text-center max-w-xl mx-auto">
             <p className="mb-6 text-lg text-slate-300">
-              Talent teams and engineering leaders can reach me directly through WhatsApp or email.
+              Talent teams and engineering leaders can reach me directly through WhatsApp, email, or the form below.
             </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <form onSubmit={handleSubmit} className="space-y-4 text-left mb-8">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your name"
+                required
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm"
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your email"
+                required
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm"
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your message"
+                required
+                rows={4}
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm resize-none"
+              />
+              <button
+                type="submit"
+                className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-xl transition-all duration-200 font-semibold text-sm"
+              >
+                Send Message
+              </button>
+            </form>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={CONTACT_LINKS.whatsapp}
                 target="_blank"

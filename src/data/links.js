@@ -11,11 +11,6 @@ export const CONTACT_LINKS = {
   resume: '/Carlos%20Alejandro%20Coronado%20Obreg%C3%B3n%20-%20CV.pdf'
 }
 
-export const PARTNER_LINKS = {
-  gamespiration: '#',
-  fyware: '#'
-}
-
 /** Reemplaza con IDs reales cuando tengas los embeds definitivos */
 export const YOUTUBE_EMBEDS = {
   featured: ['RJAHCuhLtEs?si=F1rgkjpjwW97AAlW', 'lRmVLaLLc8M?si=qppTgPpSKD3zANLa&amp', '_GYvoiYQsE4?si=TEi2dmwxjUgopgfL'],

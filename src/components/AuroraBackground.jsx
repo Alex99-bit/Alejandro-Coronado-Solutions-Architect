@@ -1,63 +1,58 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export function AuroraBackground() {
-  const cubes = [
-    { top: '10%', left: '75%', size: 220, speed: 1.0, phase: 0 },
-    { top: '26%', left: '58%', size: 160, speed: 0.9, phase: 0.4 },
-    { top: '40%', left: '72%', size: 140, speed: 1.1, phase: 0.2 },
-    { top: '56%', left: '60%', size: 180, speed: 0.8, phase: 0.6 },
-    { top: '72%', left: '68%', size: 120, speed: 1.2, phase: 0.8 },
-    { top: '22%', left: '22%', size: 160, speed: 0.6, phase: 0.9 },
-    { top: '38%', left: '8%', size: 200, speed: 0.7, phase: 0.1 },
-    { top: '58%', left: '20%', size: 130, speed: 0.9, phase: 0.3 },
-  ]
+const CUBES = [
+  { top: '10%', left: '75%', size: 220, speed: 1.0, phase: 0 },
+  { top: '26%', left: '58%', size: 160, speed: 0.9, phase: 0.4 },
+  { top: '40%', left: '72%', size: 140, speed: 1.1, phase: 0.2 },
+  { top: '56%', left: '60%', size: 180, speed: 0.8, phase: 0.6 },
+  { top: '72%', left: '68%', size: 120, speed: 1.2, phase: 0.8 },
+  { top: '22%', left: '22%', size: 160, speed: 0.6, phase: 0.9 },
+  { top: '38%', left: '8%', size: 200, speed: 0.7, phase: 0.1 },
+  { top: '58%', left: '20%', size: 130, speed: 0.9, phase: 0.3 },
+]
 
-  const cubeElsRef = useRef([])
-  const cubeStatesRef = useRef(
-    cubes.map(() => ({
-      x: 0,
-      y: 0,
-      vx: (Math.random() - 0.5) * 0.6,
-      vy: (Math.random() - 0.5) * 0.6,
-      rx: (Math.random() - 0.5) * 20,
-      ry: (Math.random() - 0.5) * 20,
-      vrx: (Math.random() - 0.5) * 0.02,
-      vry: (Math.random() - 0.5) * 0.02,
-    }))
-  )
+function getParticleCount() {
+  if (typeof window === 'undefined') return 48
+  const w = window.innerWidth
+  if (w <= 420) return 10
+  if (w <= 640) return 14
+  if (w <= 900) return 28
+  return 48
+}
 
-  const particleElsRef = useRef([])
+function initCubeStates() {
+  return CUBES.map(() => ({
+    x: 0,
+    y: 0,
+    vx: (Math.random() - 0.5) * 0.6,
+    vy: (Math.random() - 0.5) * 0.6,
+    rx: (Math.random() - 0.5) * 20,
+    ry: (Math.random() - 0.5) * 20,
+  }))
+}
+
+function initParticleStates(count) {
   const isClient = typeof window !== 'undefined'
-
-  const computeParticleCount = () => {
-    if (!isClient) return 48
-    const w = window.innerWidth
-    if (w <= 420) return 10
-    if (w <= 640) return 14
-    if (w <= 900) return 28
-    return 48
-  }
-
-  const PARTICLE_COUNT = computeParticleCount()
-  const particleSeedsRef = useRef(
-    isClient
-      ? Array.from({ length: PARTICLE_COUNT }).map(() => ({
-          size: Math.floor(Math.random() * 6) + 4,
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-        }))
-      : Array.from({ length: PARTICLE_COUNT }).map(() => ({ size: 6, x: 0, y: 0 }))
-  )
-
-  const particleStatesRef = useRef(
-    particleSeedsRef.current.map((s) => ({
-      x: s.x,
-      y: s.y,
+  return Array.from({ length: count }, () => {
+    const size = Math.floor(Math.random() * 6) + 4
+    return {
+      size,
+      x: isClient ? Math.random() * window.innerWidth : 0,
+      y: isClient ? Math.random() * window.innerHeight : 0,
       vx: (Math.random() - 0.5) * 0.5,
       vy: (Math.random() - 0.5) * 0.5,
-      size: s.size,
-    }))
-  )
+    }
+  })
+}
+
+export function AuroraBackground() {
+  const cubeElsRef = useRef([])
+  const particleElsRef = useRef([])
+  const [particleStates] = useState(() => initParticleStates(getParticleCount()))
+  const particleStatesRef = useRef(particleStates)
+
+  const [cubeStates] = useState(initCubeStates)
+  const cubeStatesRef = useRef(cubeStates)
 
   const pointerRef = useRef({
     x: typeof window !== 'undefined' ? window.innerWidth / 2 : 0,
@@ -71,12 +66,11 @@ export function AuroraBackground() {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    // Honor prefers-reduced-motion and avoid heavy animation on small screens
     try {
       const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
       if (prefersReduced) return
       if (window.innerWidth <= 640) return
-    } catch (e) {
+    } catch {
       // ignore
     }
 
@@ -121,42 +115,34 @@ export function AuroraBackground() {
       const pointer = pointerRef.current
       const pointerSpeed = Math.hypot(pointer.vx, pointer.vy)
 
-      // update cubes (zero-gravity float + scroll / pointer influences)
       if (!smallScreen) {
         cubeStatesRef.current.forEach((state, i) => {
           const el = cubeElsRef.current[i]
-          const c = cubes[i]
+          const c = CUBES[i]
           if (!el || !c) return
           const speed = c.speed || 1
 
-          // subtle noise so cubes don't feel perfectly mechanical
           const noiseX = Math.sin((now + i * 1000) / (2200 - speed * 120)) * 0.006
           const noiseY = Math.cos((now + i * 700) / (1800 - speed * 100)) * 0.005
 
-          // gentler scroll influence so cubes don't overreact
           const scrollForceX = scrollNorm * 160 * (i % 2 ? 1 : -1) * (0.4 + speed * 0.15)
           const scrollForceY = scrollNorm * 200 * (0.4 + speed * 0.15)
 
-          // much lighter pointer effect for cubes (particles keep stronger response)
           const pointerFX = pointer.vx * 0.005 * (0.4 + speed * 0.2)
           const pointerFY = pointer.vy * 0.005 * (0.4 + speed * 0.2)
 
           state.vx += noiseX + scrollForceX + pointerFX
           state.vy += noiseY + scrollForceY + pointerFY
 
-          // stronger damping so motion decays faster (less overreaction)
           state.vx *= 0.94
           state.vy *= 0.94
 
-          // integrate
           state.x += state.vx * (dt / 16)
           state.y += state.vy * (dt / 16)
 
-          // clamp velocities to avoid large, jarring movements
           state.vx = Math.max(Math.min(state.vx, 3), -3)
           state.vy = Math.max(Math.min(state.vy, 3), -3)
 
-          // wrap-around bounds so cubes stay in view
           const boundX = window.innerWidth * 0.6
           const boundY = window.innerHeight * 0.6
           if (state.x > boundX) state.x = -boundX
@@ -164,7 +150,6 @@ export function AuroraBackground() {
           if (state.y > boundY) state.y = -boundY
           if (state.y < -boundY) state.y = boundY
 
-          // rotation reacts softly to velocity and reduced noise
           state.rx += state.vx * 0.015 + Math.sin(now / 1200 + i) * 0.006
           state.ry += state.vy * 0.015 + Math.cos(now / 1000 + i) * 0.006
 
@@ -172,7 +157,6 @@ export function AuroraBackground() {
         })
       }
 
-      // update particles (react to mouse movement)
       const particleThreshold = smallScreen ? 180 : 260
       const repulseBase = isTouch ? (smallScreen ? 0.06 : 0.08) : (smallScreen ? 0.08 : 0.12)
 
@@ -192,7 +176,6 @@ export function AuroraBackground() {
           pstate.vy += (Math.random() - 0.5) * 0.08
         }
 
-        // gentle pull toward center to keep particles visible
         const centerX = window.innerWidth / 2
         const centerY = window.innerHeight / 2
         pstate.vx += (centerX - pstate.x) * 0.00004
@@ -214,7 +197,6 @@ export function AuroraBackground() {
         pel.style.opacity = `${0.55 + pstate.size / 14}`
       })
 
-      // decay pointer velocity for smoother motion
       pointer.vx *= 0.75
       pointer.vy *= 0.75
 
@@ -236,7 +218,7 @@ export function AuroraBackground() {
       <div className="blob" style={{ bottom: '10%', right: '-5%', animationDelay: '-5s' }} />
 
       <div className="scroll-3d" aria-hidden>
-        {cubes.map((c, i) => (
+        {CUBES.map((c, i) => (
           <div
             key={`cube-${i}`}
             className="cube-wrapper"
@@ -261,7 +243,7 @@ export function AuroraBackground() {
         ))}
 
         <div className="particle-layer" aria-hidden>
-          {particleStatesRef.current.map((p, idx) => (
+          {particleStates.map((p, idx) => (
             <div
               key={`part-${idx}`}
               ref={(el) => (particleElsRef.current[idx] = el)}
