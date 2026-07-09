@@ -13,10 +13,13 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
+    "@google/generative-ai": "^0.24.1",
     "@vercel/analytics": "^2.0.1",
     "aos": "^2.3.4",
+    "framer-motion": "^12.42.2",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

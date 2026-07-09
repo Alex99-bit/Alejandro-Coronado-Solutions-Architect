@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, Suspense, lazy } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
 const AuroraBackground = lazy(() => import('./components/AuroraBackground.jsx').then(m => ({ default: m.AuroraBackground })))
+import { AgentSection } from './components/AgentSection.jsx'
 import { ContactSection } from './components/ContactSection.jsx'
 import { ExperienceSection } from './components/ExperienceSection.jsx'
 import { Hero } from './components/Hero.jsx'
@@ -90,6 +91,7 @@ export default function App() {
         <StatsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <AgentSection />
         <Suspense fallback={null}>
           <YoutubeSection />
         </Suspense>
