@@ -15,7 +15,7 @@ Responde siempre en español a menos que el usuario te escriba en otro idioma.`;
 
 export const CONTACT_DATA = {
   name: "Carlos Alejandro Coronado Obregón",
-  email: "alejandro.coronado@email.com",
+  email: "alejandro.co.dev@gmail.com",
   linkedin: "https://linkedin.com/in/alejandro-coronado",
   github: "https://github.com/Alejandro-Coronado",
   roles: ["Dev Lead", "Solutions Architect", "Technical Sales Manager"],

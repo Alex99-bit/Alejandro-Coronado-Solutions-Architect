@@ -77,7 +77,7 @@ export function ChatUI({ messages, isLoading, activeTool, sendMessage, clearActi
           {activeTool?.name === "get_contact_info" && (
             <ContactCard onClose={clearActiveTool} />
           )}
-          {activeTool?.name === "schedule_meeting_mock" && (
+          {activeTool?.name === "schedule_meeting" && (
             <MeetingConfirmation
               args={activeTool.args}
               onClose={clearActiveTool}

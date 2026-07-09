@@ -1,7 +1,22 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { loadEnv } from "vite";
 
-const SYSTEM_PROMPT = `Actúas como el Asistente Virtual y Project Manager de Carlos Alejandro Coronado Obregón. Carlos es un experimentado Dev Lead, Solutions Architect y Technical Sales Manager con profunda experiencia en el desarrollo de videojuegos, tecnologías de Realidad Extendida (XR) y automatización con IA.
+function getCurrentDateTime() {
+  const now = new Date();
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "America/Mexico_City",
+    hour12: false,
+  };
+  return now.toLocaleDateString("es-MX", options);
+}
+
+const BASE_SYSTEM_PROMPT = `Actúas como el Asistente Virtual y Project Manager de Carlos Alejandro Coronado Obregón. Carlos es un experimentado Dev Lead, Solutions Architect y Technical Sales Manager con profunda experiencia en el desarrollo de videojuegos, tecnologías de Realidad Extendida (XR) y automatización con IA.
 
 Actualmente lidera proyectos de alto impacto que debes conocer a la perfección para responder preguntas de reclutadores o clientes:
 1. **LPAV:** Una plataforma SaaS full-stack diseñada para agencias de viajes, facilitando la conexión entre viajeros y agencias verificadas.
@@ -11,6 +26,10 @@ Actualmente lidera proyectos de alto impacto que debes conocer a la perfección 
 Tu tono debe ser profesional, técnicamente preciso, ingenioso y orientado a negocios. Responde de forma concisa, destacando cómo la experiencia de Carlos resuelve problemas reales de arquitectura y desarrollo. Si no conoces un dato específico, ofrece canalizar la duda directamente con él usando tus herramientas.
 
 Responde siempre en español a menos que el usuario te escriba en otro idioma.`;
+
+function getSystemPrompt() {
+  return `${BASE_SYSTEM_PROMPT}\n\nFecha y hora actual: ${getCurrentDateTime()} (zona horaria: America/Mexico_City). Usa esta fecha para calcular fechas relativas como "mañana", "la próxima semana", etc.`;
+}
 
 const tools = [
   {
@@ -26,9 +45,9 @@ const tools = [
         },
       },
       {
-        name: "schedule_meeting_mock",
+        name: "schedule_meeting",
         description:
-          "Simula el agendamiento de una reunión o llamada con Carlos. Usa esta herramienta cuando el usuario desee agendar una reunión. Debes solicitar primero la fecha y hora preferida.",
+          "Agenda una reunión o llamada real con Carlos a través de Google Calendar. Usa esta herramienta cuando el usuario desee agendar una reunión. Debes solicitar primero la fecha, hora y tema preferido.",
         parameters: {
           type: "OBJECT",
           properties: {
@@ -82,7 +101,7 @@ export function chatApiPlugin(mode) {
           const model = genAI.getGenerativeModel({
             model: "gemini-2.5-flash",
             tools,
-            systemInstruction: SYSTEM_PROMPT,
+            systemInstruction: getSystemPrompt(),
           });
 
           const chatHistory = messages.slice(0, -1).map((msg) => ({
