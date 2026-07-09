@@ -8,10 +8,14 @@ import { MeetingConfirmation } from "./MeetingConfirmation";
 export function ChatUI({ messages, isLoading, activeTool, sendMessage, clearActiveTool }) {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
   const inputRef = useRef(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const container = messagesContainerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   }, [messages, isLoading, activeTool]);
 
   const handleSubmit = (e) => {
@@ -64,7 +68,7 @@ export function ChatUI({ messages, isLoading, activeTool, sendMessage, clearActi
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-5 space-y-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-5 space-y-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
         {messages.map((message) => (
           <ChatMessage key={message.id} message={message} />
         ))}

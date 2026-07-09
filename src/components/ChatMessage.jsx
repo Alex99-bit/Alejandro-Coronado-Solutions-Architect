@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ReactMarkdown from "react-markdown";
 
 export function ChatMessage({ message }) {
   const isUser = message.role === "user";
@@ -40,9 +41,13 @@ export function ChatMessage({ message }) {
             : "bg-slate-800/80 border border-slate-700/50 text-slate-200 rounded-bl-md"
         }`}
       >
-        <p className="text-sm leading-relaxed whitespace-pre-wrap">
-          {message.content}
-        </p>
+        <div className="text-sm leading-relaxed [&_strong]:font-semibold [&_strong]:text-white [&_em]:italic [&_ul]:list-disc [&_ul]:ml-4 [&_ul]:my-1 [&_ol]:list-decimal [&_ol]:ml-4 [&_ol]:my-1 [&_li]:my-0.5 [&_p]:mb-2 [&_p:last-child]:mb-0 [&_a]:text-blue-400 [&_a]:underline [&_a]:underline-offset-2 [&_code]:bg-slate-700/50 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-blue-300">
+          {isUser ? (
+            <p>{message.content}</p>
+          ) : (
+            <ReactMarkdown>{message.content}</ReactMarkdown>
+          )}
+        </div>
         {message.toolCalls && message.toolCalls.length > 0 && (
           <div className="mt-2 pt-2 border-t border-slate-700/30">
             <span className="text-xs text-blue-400 opacity-75">
