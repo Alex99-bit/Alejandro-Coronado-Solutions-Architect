@@ -64,25 +64,68 @@ export function WorkflowCanvas() {
   const [nodeResults, setNodeResults] = useState({})
   const [activeConnection, setActiveConnection] = useState(null)
   const [output, setOutput] = useState(null)
+  const [panOffset, setPanOffset] = useState({ x: 0, y: 0 })
   const { containerRef } = useCanvasSize()
   const svgRef = useRef(null)
   const abortRef = useRef(null)
+  const panRef = useRef({ isPanning: false, startX: 0, startY: 0, startPanX: 0, startPanY: 0 })
+
+  const handleCanvasPointerDown = useCallback((e) => {
+    if (e.target.closest('.workflow-node')) return
+    if (e.target.closest('.workflow-port')) return
+    panRef.current = {
+      isPanning: true,
+      startX: e.clientX,
+      startY: e.clientY,
+      startPanX: panOffset.x,
+      startPanY: panOffset.y,
+    }
+    e.currentTarget.setPointerCapture(e.pointerId)
+  }, [panOffset.x, panOffset.y])
+
+  const handleCanvasPointerMove = useCallback((e) => {
+    const pan = panRef.current
+    if (pan.isPanning) {
+      setPanOffset({
+        x: pan.startPanX + (e.clientX - pan.startX),
+        y: pan.startPanY + (e.clientY - pan.startY),
+      })
+    }
+    if (!connecting) return
+    const rect = svgRef.current?.getBoundingClientRect()
+    if (!rect) return
+    setConnecting((prev) =>
+      prev ? {
+        ...prev,
+        to: {
+          x: e.clientX - rect.left - panOffset.x,
+          y: e.clientY - rect.top - panOffset.y,
+        },
+      } : null,
+    )
+  }, [connecting, panOffset.x, panOffset.y])
+
+  const handleCanvasPointerUp = useCallback((e) => {
+    panRef.current.isPanning = false
+    e.currentTarget.releasePointerCapture(e.pointerId)
+    if (connecting) setConnecting(null)
+  }, [connecting])
 
   const handleAddNode = useCallback((typeId) => {
-    const x = 100 + Math.random() * 300
-    const y = 80 + Math.random() * 200
-    setNodes((prev) => [...prev, createNode(typeId, x, y)])
-  }, [])
+    const x = 100 + Math.random() * 300 - panOffset.x
+    const y = 80 + Math.random() * 200 - panOffset.y
+    setNodes((prev) => [...prev, createNode(typeId, Math.max(0, x), Math.max(0, y))])
+  }, [panOffset.x, panOffset.y])
 
   const handleDrop = useCallback((e) => {
     e.preventDefault()
     const typeId = e.dataTransfer.getData('application/node-type')
     if (!typeId) return
     const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left - 100
-    const y = e.clientY - rect.top - 45
+    const x = e.clientX - rect.left - 100 - panOffset.x
+    const y = e.clientY - rect.top - 45 - panOffset.y
     setNodes((prev) => [...prev, createNode(typeId, Math.max(0, x), Math.max(0, y))])
-  }, [])
+  }, [panOffset.x, panOffset.y])
 
   const handleDragOver = useCallback((e) => {
     e.preventDefault()
@@ -108,21 +151,9 @@ export function WorkflowCanvas() {
       fromNodeId: nodeId,
       fromPortIndex: portIndex || 0,
       from: pos,
-      to: { x: event.clientX - rect.left, y: event.clientY - rect.top },
+      to: { x: event.clientX - rect.left - panOffset.x, y: event.clientY - rect.top - panOffset.y },
     })
-  }, [nodes])
-
-  const handlePointerMove = useCallback(
-    (e) => {
-      if (!connecting) return
-      const rect = svgRef.current?.getBoundingClientRect()
-      if (!rect) return
-      setConnecting((prev) =>
-        prev ? { ...prev, to: { x: e.clientX - rect.left, y: e.clientY - rect.top } } : null,
-      )
-    },
-    [connecting],
-  )
+  }, [nodes, panOffset.x, panOffset.y])
 
   const handlePortMouseUp = useCallback(
     ({ nodeId, portType, portIndex }) => {
@@ -153,10 +184,6 @@ export function WorkflowCanvas() {
     },
     [connecting, connections, nodes],
   )
-
-  const handlePointerUp = useCallback(() => {
-    if (connecting) setConnecting(null)
-  }, [connecting])
 
   const handleDeleteSelected = useCallback(() => {
     if (!selectedNodeId) return
@@ -236,6 +263,7 @@ export function WorkflowCanvas() {
     setNodeResults({})
     setActiveConnection(null)
     setOutput(null)
+    setPanOffset({ x: 0, y: 0 })
     nextId = 6
   }, [])
 
@@ -278,6 +306,15 @@ export function WorkflowCanvas() {
               )}
               <button
                 type="button"
+                onClick={() => setPanOffset({ x: 0, y: 0 })}
+                className="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-400 transition-colors hover:bg-white/10 hover:text-slate-200"
+                title="Reset view"
+              >
+                <i className="fas fa-crosshairs mr-1.5" aria-hidden />
+                Fit
+              </button>
+              <button
+                type="button"
                 onClick={handleReset}
                 className="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-400 transition-colors hover:bg-white/10 hover:text-slate-200"
               >
@@ -289,71 +326,83 @@ export function WorkflowCanvas() {
 
           <div
             ref={containerRef}
-            className="workflow-canvas-area relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950/60"
-            style={{ height: 'clamp(320px, 50vh, 520px)' }}
+            className="workflow-canvas-area relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950/60 cursor-grab active:cursor-grabbing"
+            style={{ height: 'clamp(320px, 50vh, 520px)', touchAction: 'none' }}
             onDrop={handleDrop}
             onDragOver={handleDragOver}
+            onPointerDown={handleCanvasPointerDown}
+            onPointerMove={handleCanvasPointerMove}
+            onPointerUp={handleCanvasPointerUp}
           >
-            <svg
-              ref={svgRef}
-              className="absolute inset-0 h-full w-full"
-              onPointerMove={handlePointerMove}
-              onPointerUp={handlePointerUp}
+            <div
+              className="absolute inset-0"
+              style={{ transform: `translate(${panOffset.x}px, ${panOffset.y}px)` }}
             >
-              <defs>
-                <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="12" cy="12" r="0.5" fill="rgba(255,255,255,0.04)" />
-                </pattern>
-                <filter id="flowGlow">
-                  <feGaussianBlur stdDeviation="4" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
+              <svg
+                ref={svgRef}
+                className="absolute inset-0 h-full w-full"
+              >
+                <defs>
+                  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <circle cx="12" cy="12" r="0.5" fill="rgba(255,255,255,0.04)" />
+                  </pattern>
+                  <filter id="flowGlow">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
 
-              {connections.map((conn, i) => (
-                <WorkflowConnection
-                  key={i}
-                  connection={conn}
-                  nodes={nodes}
-                  isActive={activeConnection === conn}
-                />
-              ))}
+                {connections.map((conn, i) => (
+                  <WorkflowConnection
+                    key={i}
+                    connection={conn}
+                    nodes={nodes}
+                    isActive={activeConnection === conn}
+                  />
+                ))}
 
-              {connecting && <TempConnection from={connecting.from} to={connecting.to} />}
+                {connecting && <TempConnection from={connecting.from} to={connecting.to} />}
 
-              {activeConnection && execState === 'running' && (
-                <FlowAnimation
-                  connection={activeConnection}
-                  nodes={nodes}
-                  isRunning
-                />
-              )}
-            </svg>
+                {activeConnection && execState === 'running' && (
+                  <FlowAnimation
+                    connection={activeConnection}
+                    nodes={nodes}
+                    isRunning
+                  />
+                )}
+              </svg>
 
-            <div className="absolute inset-0">
-              {nodes.map((node) => (
-                <WorkflowNode
-                  key={node.id}
-                  node={node}
-                  isSelected={selectedNodeId === node.id}
-                  execStatus={nodeExecStatus[node.id]}
-                  execResult={nodeResults[node.id]}
-                  onDragMove={handleNodeDragMove}
-                  onPortMouseDown={handlePortMouseDown}
-                  onPortMouseUp={handlePortMouseUp}
-                  onSelect={setSelectedNodeId}
-                />
-              ))}
+              <div className="absolute inset-0">
+                {nodes.map((node) => (
+                  <WorkflowNode
+                    key={node.id}
+                    node={node}
+                    isSelected={selectedNodeId === node.id}
+                    execStatus={nodeExecStatus[node.id]}
+                    execResult={nodeResults[node.id]}
+                    onDragMove={handleNodeDragMove}
+                    onPortMouseDown={handlePortMouseDown}
+                    onPortMouseUp={handlePortMouseUp}
+                    onSelect={setSelectedNodeId}
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="pointer-events-none absolute bottom-3 left-3 rounded-lg bg-black/40 px-3 py-1.5 font-mono text-xs text-slate-400 backdrop-blur-sm">
               {nodes.length} nodes · {connections.length} connections
               {execState === 'running' && ' · ⚡ running...'}
             </div>
+
+            {(panOffset.x !== 0 || panOffset.y !== 0) && (
+              <div className="pointer-events-none absolute bottom-3 right-3 rounded-lg bg-black/40 px-2 py-1 font-mono text-[10px] text-slate-500 backdrop-blur-sm">
+                {Math.round(panOffset.x)}, {Math.round(panOffset.y)}
+              </div>
+            )}
           </div>
         </div>
       </div>
