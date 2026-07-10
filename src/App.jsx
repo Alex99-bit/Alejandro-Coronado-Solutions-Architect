@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 const AuroraBackground = lazy(() => import('./components/AuroraBackground.jsx').then(m => ({ default: m.AuroraBackground })))
 import { AgentSection } from './components/AgentSection.jsx'
 import { ContactSection } from './components/ContactSection.jsx'
+import { DashboardSection } from './components/dashboard/DashboardSection.jsx'
 import { ExperienceSection } from './components/ExperienceSection.jsx'
 import { Hero } from './components/Hero.jsx'
 import { Navigation } from './components/Navigation.jsx'
@@ -12,8 +13,21 @@ import { ProjectsSection } from './components/ProjectsSection.jsx'
 import { SiteFooter } from './components/SiteFooter.jsx'
 import { StatsSection } from './components/StatsSection.jsx'
 import { Toast } from './components/Toast.jsx'
+const PlaygroundSection = lazy(() => import('./components/playground/PlaygroundSection.jsx').then(m => ({ default: m.PlaygroundSection })))
 const YoutubeSection = lazy(() => import('./components/YoutubeSection.jsx').then(m => ({ default: m.YoutubeSection })))
 import { useNavScrollShadow } from './hooks/useNavScrollShadow.js'
+
+function SectionSkeleton({ height = 'h-96' }) {
+  return (
+    <div className={`${height} animate-pulse`}>
+      <div className="container mx-auto px-6 py-24">
+        <div className="h-8 w-64 rounded-lg bg-slate-800/50 mb-6" />
+        <div className="h-4 w-96 rounded-lg bg-slate-800/30 mb-4" />
+        <div className="h-4 w-80 rounded-lg bg-slate-800/30" />
+      </div>
+    </div>
+  )
+}
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -76,7 +90,7 @@ export default function App() {
         href="#main-content"
         className="pointer-events-none fixed left-6 top-6 z-[300] rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-900 opacity-0 shadow-xl ring-2 ring-blue-500/30 transition-opacity focus:pointer-events-auto focus:opacity-100 focus:outline-none"
       >
-        Saltar al contenido
+        Skip to content
       </a>
 
       <Suspense fallback={null}>
@@ -85,14 +99,18 @@ export default function App() {
 
       <Navigation elevated={elevated} menuOpen={menuOpen} onToggleMenu={toggleMenu} />
 
-      <main id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <Hero />
         <ProfessionalProfile />
         <StatsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <DashboardSection />
+        <Suspense fallback={<SectionSkeleton height="h-[600px]" />}>
+          <PlaygroundSection />
+        </Suspense>
         <AgentSection />
-        <Suspense fallback={null}>
+        <Suspense fallback={<SectionSkeleton height="h-[500px]" />}>
           <YoutubeSection />
         </Suspense>
         <ContactSection onSubmitSuccess={showSubmissionToast} />

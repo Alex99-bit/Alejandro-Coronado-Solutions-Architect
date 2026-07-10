@@ -4,7 +4,7 @@ const heroImg = "/profile-photo-800.jpg";
 
 export function Hero() {
   return (
-    <header className="relative flex min-h-screen items-center pt-20">
+    <header className="relative flex min-h-screen items-center">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-16 lg:flex-row">
           <div

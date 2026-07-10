@@ -12,7 +12,7 @@ export function SkillsByCategory({ data, isLoading }) {
   }));
 
   return (
-    <ChartCard title="Skills por Categoría">
+    <ChartCard title="Skills by Category">
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={chartData}
@@ -36,17 +36,17 @@ export function SkillsByCategory({ data, isLoading }) {
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
             }}
             formatter={(value, name) => {
-              if (name === 'expertise') return [`${value}/100`, 'Nivel'];
+              if (name === 'expertise') return [`${value}/100`, 'Level'];
               return [value, name];
             }}
             labelFormatter={(label) => {
               const category = chartData.find((c) => c.name === label);
-              return category ? `${label} (${category.years} años)` : label;
+              return category ? `${label} (${category.years} years)` : label;
             }}
           />
           <Bar
             dataKey="expertise"
-            name="Nivel de Expertise"
+            name="Expertise Level"
             fill="#6366f1"
             radius={[0, 4, 4, 0]}
             animationDuration={800}

@@ -33,14 +33,14 @@ export function ChatUI({ messages, isLoading, activeTool, sendMessage, clearActi
   };
 
   const quickQuestions = [
-    "¿Quién es Carlos?",
-    "¿Qué proyectos tiene?",
-    "Información de contacto",
-    "Agendar una reunión",
+    "Who is Carlos?",
+    "What projects does he have?",
+    "Contact information",
+    "Schedule a meeting",
   ];
 
   return (
-    <div className="flex flex-col h-[600px] bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden">
+    <div className="flex flex-col h-[min(600px,75vh)] bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden">
       <div className="flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-slate-800/80 to-slate-900/80 border-b border-slate-700/50">
         <div className="relative">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
@@ -62,9 +62,9 @@ export function ChatUI({ messages, isLoading, activeTool, sendMessage, clearActi
         </div>
         <div>
           <h3 className="text-white font-semibold text-sm">
-            Asistente de Carlos
+            Carlos Assistant
           </h3>
-          <p className="text-emerald-400 text-xs">En línea</p>
+          <p className="text-emerald-400 text-xs">Online</p>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ export function ChatUI({ messages, isLoading, activeTool, sendMessage, clearActi
 
       {messages.length <= 1 && (
         <div className="px-5 pb-3">
-          <p className="text-xs text-slate-500 mb-2">Preguntas frecuentes:</p>
+          <p className="text-xs text-slate-500 mb-2">Frequently asked questions:</p>
           <div className="flex flex-wrap gap-2">
             {quickQuestions.map((question) => (
               <button
@@ -117,13 +117,14 @@ export function ChatUI({ messages, isLoading, activeTool, sendMessage, clearActi
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Escribe tu mensaje..."
+            placeholder="Type your message..."
             disabled={isLoading}
             className="flex-1 px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 disabled:opacity-50 transition-all text-sm"
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
+            aria-label="Send message"
             className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 disabled:from-slate-700 disabled:to-slate-700 text-white rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <svg

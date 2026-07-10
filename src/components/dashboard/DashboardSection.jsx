@@ -8,7 +8,7 @@ export function DashboardSection() {
   const { data, isLoading } = useDashboardData();
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-800" id="dashboard">
+    <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800" id="dashboard">
       <div className="container mx-auto px-6">
         <DashboardHeader />
 

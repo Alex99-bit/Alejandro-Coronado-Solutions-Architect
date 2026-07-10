@@ -5,7 +5,7 @@ export function TechStackRadar({ data, isLoading }) {
   if (isLoading) return <ChartCardSkeleton />;
 
   return (
-    <ChartCard title="Stack Tecnológico Detallado">
+    <ChartCard title="Detailed Tech Stack">
       <ResponsiveContainer width="100%" height={300}>
         <RadarChart data={data}>
           <PolarGrid stroke="#334155" />
@@ -18,16 +18,16 @@ export function TechStackRadar({ data, isLoading }) {
               borderRadius: '8px',
             }}
             formatter={(value, name) => {
-              if (name === 'level') return [`${value}/100`, 'Nivel'];
+              if (name === 'level') return [`${value}/100`, 'Level'];
               return [value, name];
             }}
             labelFormatter={(label) => {
               const tech = data.find((t) => t.technology === label);
-              return tech ? `${label} (${tech.years} años)` : label;
+              return tech ? `${label} (${tech.years} years)` : label;
             }}
           />
           <Radar
-            name="Nivel"
+            name="Level"
             dataKey="level"
             stroke="#6366f1"
             fill="#6366f1"

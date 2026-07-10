@@ -26,7 +26,7 @@ export function SiteFooter() {
             rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
-            <i className="fab fa-linkedin-in" aria-hidden />
+            <i className="fab fa-linkedin" aria-hidden />
           </a>
           <a
             href={CONTACT_LINKS.whatsapp}
@@ -51,7 +51,7 @@ export function SiteFooter() {
             className="text-slate-500 transition-all hover:text-white"
             aria-label="Email"
           >
-            <i className="fa fa-envelope" aria-hidden />
+            <i className="fas fa-envelope" aria-hidden />
           </a>
           <a
             href={SOCIAL_LINKS.github}
