@@ -9,11 +9,11 @@ export function ProfessionalProfile() {
   return (
     <section
       id="about"
-      className="scroll-mt-28 border-y border-white/5 py-24"
+      className="scroll-mt-20 border-y border-white/5 py-24"
       aria-labelledby="about-heading"
     >
       <div className="container mx-auto px-6">
-        <header className="mb-14 max-w-3xl lg:mx-0" data-aos="fade-right">
+        <header className="mb-16 max-w-3xl lg:mx-0" data-aos="fade-right">
           <p className="mb-4 text-xs font-bold tracking-widest text-blue-400 uppercase">
             Professional Profile
           </p>
@@ -21,10 +21,10 @@ export function ProfessionalProfile() {
             Senior Software Engineer &amp; <span className="gradient-text">Solutions Architect</span>
           </h2>
           <p className={sectionLead}>
-            I build proprietary tools, optimized systems, and high-performance software platforms that translate complex business requirements into precise technical specifications. I am a bilingual software engineer, ingeniero de software, AI specialist, and arquitecto de soluciones with a background spanning Java, .NET, Node.js, SQL, NoSQL, distributed systems, and immersive simulation.
+            I build proprietary tools, optimized systems, and high-performance software platforms that translate complex business requirements into precise technical specifications. I am a bilingual software engineer, AI specialist, and solutions architect with a background spanning Java, .NET, Node.js, SQL, NoSQL, distributed systems, and immersive simulation.
           </p>
           <p className="mt-4 text-base font-semibold text-slate-300">
-            Ingeniero de software y arquitecto de soluciones especializado en IA, backends empresariales y automatizacion.
+            Software engineer and solutions architect specialized in AI, enterprise backends, and automation.
           </p>
             <div className="mt-6 flex flex-col sm:flex-row items-start gap-4">
               <a

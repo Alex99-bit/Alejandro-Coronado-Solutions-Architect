@@ -5,7 +5,7 @@ export function ExpertiseDistribution({ data, isLoading }) {
   if (isLoading) return <ChartCardSkeleton />;
 
   return (
-    <ChartCard title="Lenguajes más usados (últimos 6 meses)">
+    <ChartCard title="Most used languages (last 6 months)">
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie

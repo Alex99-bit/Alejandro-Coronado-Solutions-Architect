@@ -42,7 +42,7 @@ const achievements = [
 
 export function ExperienceSection() {
   return (
-    <section className="border-y border-white/5 py-28" id="experience">
+    <section className="border-y border-white/5 py-24" id="experience">
       <div className="container mx-auto px-6">
         <div className="mb-16 max-w-3xl" data-aos="fade-right">
           <p className="mb-4 text-xs font-bold tracking-widest text-blue-400 uppercase">

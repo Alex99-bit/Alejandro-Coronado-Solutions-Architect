@@ -5,7 +5,7 @@ export function DashboardHeader() {
         Skills & Expertise Dashboard
       </h2>
       <p className="text-slate-400 mt-2">
-        Habilidades técnicas, años de experiencia y dominio de tecnologías
+        Technical skills, years of experience, and technology proficiency
       </p>
     </div>
   );

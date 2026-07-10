@@ -90,7 +90,7 @@ export function ContactCard({ onClose }) {
             </div>
             <div>
               <p className="text-xs text-slate-400">LinkedIn</p>
-              <p className="text-sm text-white">Ver perfil profesional</p>
+              <p className="text-sm text-white">View professional profile</p>
             </div>
           </motion.a>
 
@@ -112,7 +112,7 @@ export function ContactCard({ onClose }) {
             </div>
             <div>
               <p className="text-xs text-slate-400">GitHub</p>
-              <p className="text-sm text-white">Ver proyectos y código</p>
+              <p className="text-sm text-white">View projects and code</p>
             </div>
           </motion.a>
         </div>

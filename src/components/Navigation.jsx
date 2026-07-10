@@ -1,29 +1,56 @@
+import { useEffect, useRef } from 'react'
 import { SOCIAL_LINKS, CONTACT_LINKS } from '../data/links.js'
 
 const desktopLink =
-  'text-sm font-semibold uppercase tracking-widest transition-colors hover:text-blue-400'
+  'text-xs font-semibold uppercase tracking-wider transition-colors hover:text-blue-400'
 
 export function Navigation({ elevated, menuOpen, onToggleMenu }) {
+  const overlayRef = useRef(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    function handleKeyDown(e) {
+      if (e.key !== 'Tab' || !overlayRef.current) return
+
+      const focusable = overlayRef.current.querySelectorAll(
+        'a[href], button:not([disabled])'
+      )
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [menuOpen])
   return (
     <>
       <nav
         id="mainNav"
         className={`fixed z-[100] w-full px-6 transition-all duration-300 ${
           elevated
-            ? 'border-b border-white/5 bg-slate-950/80 py-4 backdrop-blur-lg'
-            : 'border-transparent py-6'
+            ? 'border-b border-white/5 bg-slate-950/80 py-3 md:py-4 backdrop-blur-lg'
+            : 'border-transparent bg-slate-950/40 backdrop-blur-sm py-4 md:py-6'
         }`}
       >
         <div className="container mx-auto flex items-center justify-between">
-          <a href="#" className="z-[110] text-2xl font-extrabold tracking-tighter">
+          <a href="#" className="z-[110] text-xl md:text-2xl font-extrabold tracking-tighter flex-shrink-0">
             ALEX<span className="gradient-text">CORONADO</span>
           </a>
 
-          <div className="hidden items-center gap-4 lg:gap-6 xl:gap-10 md:flex">
+          <div className="hidden items-center gap-4 lg:gap-4 xl:gap-8 md:flex overflow-hidden">
             <a href="#about" className={desktopLink}>
               About
             </a>
-            <a href="#highlights" className={desktopLink}>
+            <a href="#highlights" className={`${desktopLink} hidden lg:inline-flex`}>
               Highlights
             </a>
             <a href="#experience" className={desktopLink}>
@@ -32,13 +59,13 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
             <a href="#projects" className={desktopLink}>
               Projects
             </a>
-            <a href="#playground" className={desktopLink}>
+            <a href="#playground" className={`${desktopLink} hidden lg:inline-flex`}>
               Playground
             </a>
-            <a href="#content" className={desktopLink}>
+            <a href="#content" className={`${desktopLink} hidden xl:inline-flex`}>
               Content
             </a>
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className={`${desktopLink} hidden lg:inline-flex`}>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className={`${desktopLink} hidden xl:inline-flex`}>
               LinkedIn
             </a>
             <a href={CONTACT_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className={`${desktopLink} hidden lg:inline-flex`}>
@@ -46,7 +73,7 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
             </a>
             <a
               href="#contact"
-              className="btn-fancy rounded-full bg-white px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-black transition-all hover:scale-105 active:scale-95"
+              className="btn-fancy rounded-full bg-white px-5 py-2 text-xs font-semibold uppercase tracking-wide text-black transition-all hover:scale-105 active:scale-95 whitespace-nowrap flex-shrink-0"
             >
               Recruiter Contact
             </a>
@@ -67,12 +94,28 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
         </div>
       </nav>
 
+      <div className="h-[52px] md:h-[72px]" aria-hidden="true" />
+
       <div
+        ref={overlayRef}
         className={`mobile-overlay fixed inset-0 z-[105] flex items-center justify-center bg-slate-950/95 backdrop-blur-2xl ${
           menuOpen ? 'pointer-events-auto is-open' : 'pointer-events-none'
         }`}
         aria-hidden={!menuOpen}
+        aria-modal={menuOpen ? 'true' : undefined}
+        role={menuOpen ? 'dialog' : undefined}
       >
+        <button
+          type="button"
+          onClick={onToggleMenu}
+          className="absolute top-6 right-6 z-[110] text-white hover:text-blue-400 transition-colors"
+          aria-label="Close menu"
+        >
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
         <div className="flex flex-col items-center space-y-8 text-center">
           <MobileNavLink delay="0.1s" href="#about" onNavigate={onToggleMenu}>
             About
@@ -117,7 +160,7 @@ export function Navigation({ elevated, menuOpen, onToggleMenu }) {
               <span className="sr-only">Instagram</span>
             </a>
             <a href={CONTACT_LINKS.email} target="_blank" rel="noopener noreferrer">
-              <i className="fa fa-envelope" aria-hidden />
+              <i className="fas fa-envelope" aria-hidden />
               <span className="sr-only">Email</span>
             </a>
             <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer">

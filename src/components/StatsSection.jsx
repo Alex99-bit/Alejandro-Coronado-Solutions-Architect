@@ -40,7 +40,7 @@ function StatCard({ label, headline, subtitle, aosDelay }) {
       <p className="mb-2 text-xs font-bold tracking-widest text-slate-500 uppercase">
         {label}
       </p>
-      <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight whitespace-normal break-words">
+      <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight whitespace-normal break-words">
         {headline}
       </h3>
       <p className="mt-2 text-sm text-slate-400">{subtitle}</p>
