@@ -29,11 +29,12 @@ export function ProfessionalProfile() {
             <div className="mt-6 flex flex-col sm:flex-row items-start gap-4">
               <a
                 href={CONTACT_LINKS.resume}
-                download="Carlos-Alejandro-Coronado-Obregon-CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-white bg-slate-800 border border-white/5 hover:bg-slate-900"
               >
-                <i className="fas fa-file-download" aria-hidden />
-                Download CV
+                <i className="fas fa-file-lines" aria-hidden />
+                See Resume
               </a>
 
               <a
